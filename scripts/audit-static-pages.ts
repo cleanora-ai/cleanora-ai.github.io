@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const SITE_URL = "https://cleanoraai.com";
+const SITE_URL = "https://cleanora-ai.github.io";
 const PUBLIC_DIR = path.resolve("public");
 const ROOT_INDEX = path.resolve("index.html");
 

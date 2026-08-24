@@ -1,7 +1,7 @@
 export const site = {
   name: "Cleanora AI",
   productName: "Cleanora",
-  url: "https://cleanoraai.com",
+  url: "https://cleanora-ai.github.io",
   helpHref: "/#faq",
   analyticsMeasurementId: "",
 };
