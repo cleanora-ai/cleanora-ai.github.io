@@ -4,24 +4,24 @@
 
 ## Core pages
 
-- [Local File Organizer for Windows](https://cleanora-ai.github.io/ai-file-organizer/): Organize Windows folders with local metadata-based classification, exact destination previews, explicit confirmation, audit history, and conflict-safe undo.
-- [Best File Organizer for Windows](https://cleanora-ai.github.io/best-file-organizer-windows/): Compare AI, rule-based, and manual file organization for Windows. See which approach fits Downloads cleanup, renaming, privacy, and large folders.
-- [How to Clean Your Downloads Folder Automatically](https://cleanora-ai.github.io/clean-downloads-folder/): Clean and organize a crowded Windows Downloads folder with a repeatable workflow for documents, installers, archives, images, and temporary files.
-- [How to Organize Files Automatically on Windows](https://cleanora-ai.github.io/organize-files-windows/): Build a practical Windows file system for Downloads, Desktop, Documents, and project folders, then automate repeated sorting and renaming.
-- [File Organizer for Windows](https://cleanora-ai.github.io/windows-file-organizer/): Organize Downloads, Desktop, Documents, and project folders on Windows with local planning, preview-first review, and reversible changes.
-- [Organize Files Automatically Without Losing Control](https://cleanora-ai.github.io/organize-files-automatically/): A safe workflow for categorizing, renaming, and archiving thousands of files with previews, small batches, and a structure built for retrieval.
-- [Preview File Moves Before Organizing Windows Folders](https://cleanora-ai.github.io/preview-file-moves-windows/): Preview exact file destinations, conflicts, categories, and reasons on Windows before confirming a bulk organization plan with Cleanora.
-- [File Organization for Students](https://cleanora-ai.github.io/use-cases/students/): Organize course readings, lecture slides, assignments, notes, and screenshots with a semester system that remains easy to archive.
-- [File Organization for Freelancers](https://cleanora-ai.github.io/use-cases/freelancers/): Organize briefs, contracts, invoices, source files, deliverables, and feedback with a repeatable client folder lifecycle.
-- [File Organization for Researchers](https://cleanora-ai.github.io/use-cases/researchers/): Organize literature, protocols, data, analysis, figures, manuscripts, and administrative records without replacing specialist research tools.
-- [File Organization for Accountants](https://cleanora-ai.github.io/use-cases/accountants/): Organize client records, invoices, statements, tax documents, workpapers, and exports with year, entity, status, and retention controls.
-- [Cleanora vs Cloud AI File Organizers](https://cleanora-ai.github.io/alternatives/cloud-organizers/): Compare local Windows file organization with cloud-based AI organizers by privacy, preview control, setup, and offline use.
-- [Cleanora vs File Juggler](https://cleanora-ai.github.io/alternatives/file-juggler/): Compare Cleanora's metadata-based suggestions with File Juggler's Windows rules for moving, renaming, deleting, and document-based workflows.
-- [Cleanora vs Microsoft Power Automate](https://cleanora-ai.github.io/alternatives/power-automate/): Compare a focused local file organizer with Microsoft's broader workflow automation platform for desktop, cloud, and business processes.
-- [Automatic vs Manual File Organization](https://cleanora-ai.github.io/alternatives/manual-organization/): Compare automatic and manual file organization by setup time, review, control, scale, consistency, and the types of files each method handles best.
+- [Local File Organizer for Windows](https://cleanoraai.com/ai-file-organizer/): Organize Windows folders with local metadata-based classification, exact destination previews, explicit confirmation, audit history, and conflict-safe undo.
+- [Best File Organizer for Windows](https://cleanoraai.com/best-file-organizer-windows/): Compare AI, rule-based, and manual file organization for Windows. See which approach fits Downloads cleanup, renaming, privacy, and large folders.
+- [How to Clean Your Downloads Folder Automatically](https://cleanoraai.com/clean-downloads-folder/): Clean and organize a crowded Windows Downloads folder with a repeatable workflow for documents, installers, archives, images, and temporary files.
+- [How to Organize Files Automatically on Windows](https://cleanoraai.com/organize-files-windows/): Build a practical Windows file system for Downloads, Desktop, Documents, and project folders, then automate repeated sorting and renaming.
+- [File Organizer for Windows](https://cleanoraai.com/windows-file-organizer/): Organize Downloads, Desktop, Documents, and project folders on Windows with local planning, preview-first review, and reversible changes.
+- [Organize Files Automatically Without Losing Control](https://cleanoraai.com/organize-files-automatically/): A safe workflow for categorizing, renaming, and archiving thousands of files with previews, small batches, and a structure built for retrieval.
+- [Preview File Moves Before Organizing Windows Folders](https://cleanoraai.com/preview-file-moves-windows/): Preview exact file destinations, conflicts, categories, and reasons on Windows before confirming a bulk organization plan with Cleanora.
+- [File Organization for Students](https://cleanoraai.com/use-cases/students/): Organize course readings, lecture slides, assignments, notes, and screenshots with a semester system that remains easy to archive.
+- [File Organization for Freelancers](https://cleanoraai.com/use-cases/freelancers/): Organize briefs, contracts, invoices, source files, deliverables, and feedback with a repeatable client folder lifecycle.
+- [File Organization for Researchers](https://cleanoraai.com/use-cases/researchers/): Organize literature, protocols, data, analysis, figures, manuscripts, and administrative records without replacing specialist research tools.
+- [File Organization for Accountants](https://cleanoraai.com/use-cases/accountants/): Organize client records, invoices, statements, tax documents, workpapers, and exports with year, entity, status, and retention controls.
+- [Cleanora vs Cloud AI File Organizers](https://cleanoraai.com/alternatives/cloud-organizers/): Compare local Windows file organization with cloud-based AI organizers by privacy, preview control, setup, and offline use.
+- [Cleanora vs File Juggler](https://cleanoraai.com/alternatives/file-juggler/): Compare Cleanora's metadata-based suggestions with File Juggler's Windows rules for moving, renaming, deleting, and document-based workflows.
+- [Cleanora vs Microsoft Power Automate](https://cleanoraai.com/alternatives/power-automate/): Compare a focused local file organizer with Microsoft's broader workflow automation platform for desktop, cloud, and business processes.
+- [Automatic vs Manual File Organization](https://cleanoraai.com/alternatives/manual-organization/): Compare automatic and manual file organization by setup time, review, control, scale, consistency, and the types of files each method handles best.
 
 ## Documentation
 
-- [Privacy](https://cleanora-ai.github.io/docs/privacy/)
-- [How Cleanora works](https://cleanora-ai.github.io/docs/how-it-works/)
-- [Supported file types](https://cleanora-ai.github.io/docs/supported-file-types/)
+- [Privacy](https://cleanoraai.com/docs/privacy/)
+- [How Cleanora works](https://cleanoraai.com/docs/how-it-works/)
+- [Supported file types](https://cleanoraai.com/docs/supported-file-types/)
