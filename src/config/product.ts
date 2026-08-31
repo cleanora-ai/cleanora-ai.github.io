@@ -9,6 +9,8 @@ export const site = {
 
 export const product = {
   productName: "Cleanora",
+  price: { amount: 10.99, display: "$10.99" },
+  checkoutUrl: "https://computora.gumroad.com/l/cleanora",
   downloadHref: "#download",
   platforms: {
     supported: ["Windows 10", "Windows 11"],

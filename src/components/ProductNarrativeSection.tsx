@@ -36,7 +36,7 @@ const ProductNarrativeSection = () => {
             From chaotic folder to reviewed structure
           </h2>
           <p className="mt-4 text-muted-foreground md:text-lg">
-            Cleanora is designed for the common file problem: you know the files matter, but the names and locations no longer explain what they are.
+            Cleanora is a very lightweight folder cleaner designed to handle many files and folders quickly, while keeping every proposed move visible and reviewable.
           </p>
         </div>
 
