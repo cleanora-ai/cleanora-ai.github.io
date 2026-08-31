@@ -29,18 +29,18 @@ const DemoSection = () => {
           </h2>
 
           <p className="mt-4 text-muted-foreground md:text-lg">
-            Cleanora does not hide file moves. Review the classify, preview, and apply flow before using it on an important folder.
+            See the Cleanora app first, then the organized output folder it creates after a review.
           </p>
         </div>
 
         <div className="mx-auto mt-12 max-w-5xl">
           <div className="overflow-hidden rounded-xl border border-primary/20 bg-card shadow-2xl">
-            <img src={demoGif} alt="Real Cleanora AI app workflow showing a selected folder, reviewed file destinations, and the confirmation step" width="1280" height="900" loading="lazy" className="h-auto w-full bg-background" />
+            <img src={demoGif} alt="Real Cleanora AI app opening screen followed by an organized output folder" width="1280" height="900" loading="lazy" className="h-auto w-full bg-background" />
           </div>
         </div>
 
         <p className="mx-auto mt-4 max-w-xl text-center text-sm text-muted-foreground/90">
-          Real Cleanora app recording: select a folder, inspect the proposed destinations, and confirm only after review.
+          Real Cleanora app views: the opening screen followed by an organized output folder.
         </p>
       </div>
     </section>
