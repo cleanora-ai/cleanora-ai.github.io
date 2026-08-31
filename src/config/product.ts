@@ -3,6 +3,7 @@ export const site = {
   productName: "Cleanora",
   url: "https://cleanoraai.com",
   helpHref: "/#faq",
+  supportEmail: "support@computoraai.com",
   analyticsMeasurementId: "",
 };
 
