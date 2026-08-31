@@ -1,4 +1,4 @@
-import{j as e}from"./animation-BRsySF4U.js";import{N as s,F as r,S as i,a as l}from"./SeoHead-BY4fh2dv.js";import{t as c}from"./index-LZ7l59Fl.js";import{d}from"./react-DK_JcHL8.js";import"./charts-C_KtFLeW.js";const m={"offline-processing":{title:"Offline File Organization",description:"Cleanora processes files locally without cloud uploads.",sections:[{title:"Privacy-first architecture",content:`
+import{j as e}from"./animation-BRsySF4U.js";import{N as s,F as r,S as i,a as l}from"./SeoHead-B7khdvX3.js";import{t as c}from"./index-Bax7VrVz.js";import{d}from"./react-DK_JcHL8.js";import"./charts-C_KtFLeW.js";const m={"offline-processing":{title:"Offline File Organization",description:"Cleanora processes files locally without cloud uploads.",sections:[{title:"Privacy-first architecture",content:`
 Cleanora processes files directly on your device.
 
 Your files never leave your computer.
