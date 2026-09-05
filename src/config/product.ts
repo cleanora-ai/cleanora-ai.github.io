@@ -9,7 +9,12 @@ export const site = {
 
 export const product = {
   productName: "Cleanora",
-  price: { amount: 10.99, display: "$10.99" },
+  price: {
+    amount: 9.99,
+    display: "$9.99",
+    referenceDisplay: "$19.99",
+    label: "Launch price",
+  },
   checkoutUrl: "https://computora.gumroad.com/l/cleanora",
   paypalUrl: "https://www.paypal.com/ncp/payment/7JK6E8N5L87N4",
   downloadHref: "#download",
