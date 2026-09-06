@@ -12,7 +12,7 @@ export const product = {
   price: {
     amount: 9.99,
     display: "$9.99",
-    referenceDisplay: "$19.99",
+    referenceDisplay: "$39",
     label: "Launch price",
   },
   checkoutUrl: "https://computora.gumroad.com/l/cleanora",
