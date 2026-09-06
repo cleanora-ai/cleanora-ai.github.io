@@ -1,4 +1,4 @@
-import { product } from "@/config/product";
+import { product, site } from "@/config/product";
 
 export const docs = {
   install: {
@@ -8,11 +8,15 @@ export const docs = {
     sections: [
       {
         title: "Download Cleanora",
-        content: `Use the signed Windows installer published on the product site, then run it on a supported PC. A public release URL and signed production installer must be configured before deployment.`,
+        content: "Open the Download for Windows section on the official Cleanora site, complete checkout with your preferred purchase option, and use the download instructions supplied with the purchase.",
       },
       {
         title: "Run the installer",
         content: `The supported systems are ${product.platforms.supported.join(", ")}. Use the installer provided for Windows.`,
+      },
+      {
+        title: "Current release information",
+        content: "These instructions apply to Cleanora 0.1.0 and were reviewed on September 6, 2026. Use only a Cleanora-labeled Windows package obtained through the official product flow.",
       },
       {
         title: "Choose a focused folder first",
@@ -24,7 +28,7 @@ export const docs = {
       },
       {
         title: "Need help",
-        content: "Use the installation and troubleshooting pages on this site for setup guidance.",
+        content: `Use the installation and troubleshooting pages on this site or contact ${site.supportEmail} for setup and purchase-delivery help.`,
       },
     ],
   },
@@ -67,8 +71,16 @@ export const docs = {
         content: `If suggestions do not match your workflow, do not apply them. Narrow the folder scope or organize a smaller batch.`,
       },
       {
+        title: "Download or installer does not match",
+        content: `Do not run a package that is not clearly labeled Cleanora. Return to the official purchase library or contact ${site.supportEmail} with the order email and downloaded filename.`,
+      },
+      {
+        title: "Release and platform details",
+        content: "This guide applies to Cleanora 0.1.0 on Windows 10 and Windows 11. It was reviewed on September 6, 2026.",
+      },
+      {
         title: "Support",
-        content: "Use the documentation pages on this site for installation, privacy, and troubleshooting guidance.",
+        content: `For unresolved installation, purchase-delivery, or activation issues, contact ${site.supportEmail}.`,
       },
     ],
   },

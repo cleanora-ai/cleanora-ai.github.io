@@ -6,7 +6,7 @@
 
 - [Local File Organizer for Windows](https://cleanoraai.com/ai-file-organizer/): Organize Windows folders with local metadata-based classification, exact destination previews, explicit confirmation, audit history, and conflict-safe undo.
 - [Best File Organizer for Windows](https://cleanoraai.com/best-file-organizer-windows/): Compare AI, rule-based, and manual file organization for Windows. See which approach fits Downloads cleanup, renaming, privacy, and large folders.
-- [How to Clean Your Downloads Folder Automatically](https://cleanoraai.com/clean-downloads-folder/): Clean and organize a crowded Windows Downloads folder with a repeatable workflow for documents, installers, archives, images, and temporary files.
+- [Downloads Folder Organizer for Windows](https://cleanoraai.com/clean-downloads-folder/): Organize a crowded Windows Downloads folder by file type, metadata, or modified date. Preview exact destinations, avoid conflicts, and undo approved moves.
 - [How to Organize Files Automatically on Windows](https://cleanoraai.com/organize-files-windows/): Build a practical Windows file system for Downloads, Desktop, Documents, and project folders, then automate repeated sorting and renaming.
 - [File Organizer for Windows](https://cleanoraai.com/windows-file-organizer/): Organize Downloads, Desktop, Documents, and project folders on Windows with local planning, preview-first review, and reversible changes.
 - [Organize Files Automatically Without Losing Control](https://cleanoraai.com/organize-files-automatically/): A safe workflow for categorizing, renaming, and archiving thousands of files with previews, small batches, and a structure built for retrieval.

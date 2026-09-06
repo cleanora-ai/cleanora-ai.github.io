@@ -35,6 +35,22 @@ export interface SeoComparison {
   }>;
 }
 
+export interface SeoEvidence {
+  title: string;
+  summary: string;
+  facts: Array<{
+    label: string;
+    value: string;
+  }>;
+  media: Array<{
+    kind: "image" | "video";
+    src: string;
+    alt: string;
+    caption: string;
+  }>;
+  note: string;
+}
+
 export interface SeoPage {
   route: string;
   kind: SeoPageKind;
@@ -52,6 +68,7 @@ export interface SeoPage {
   comparison: SeoComparison;
   faqs: SeoFaq[];
   related: string[];
+  evidence?: SeoEvidence;
   indexable?: boolean;
 }
 
@@ -226,35 +243,35 @@ export const seoPages: SeoPage[] = [
     route: "clean-downloads-folder",
     kind: "landing",
     topic: "downloads",
-    title: "Clean Your Downloads Folder Automatically on Windows",
-    h1: "How to Clean Your Downloads Folder Automatically",
+    title: "Downloads Folder Organizer for Windows | Safe Preview",
+    h1: "Downloads Folder Organizer for Windows",
     description:
-      "Clean and organize a crowded Windows Downloads folder with a repeatable workflow for documents, installers, archives, images, and temporary files.",
-    eyebrow: "Downloads cleanup workflow",
-    updatedAt,
+      "Organize a crowded Windows Downloads folder by file type, metadata, or modified date. Preview exact destinations, avoid conflicts, and undo approved moves.",
+    eyebrow: "Safe Windows Downloads organization",
+    updatedAt: "2026-09-06",
     directAnswer:
-      "To clean a Downloads folder automatically, separate disposable files from documents you need to keep and organize the remaining files by durable categories. Cleanora can classify filenames and metadata locally, propose exact destinations, and let you review the plan before files move.",
-    problemTitle: "Downloads is an inbox, not a permanent filing system",
+      "Cleanora is a Downloads folder organizer for Windows 10 and 11. It classifies local files using filenames, extensions, modified dates, and filesystem metadata, then shows the exact destination and any conflict before a move. You can exclude files, approve the remaining plan, and use the local audit history to undo eligible changes.",
+    problemTitle: "Downloads needs a predictable filing pass, not hidden automation",
     problem: [
-      "Browsers, email clients, and collaboration tools all save files into Downloads. That creates a mixture of installers, duplicate archives, receipts, reference PDFs, screenshots, and active work with no shared structure.",
-      "Sorting only by extension creates broad folders such as PDFs or Images, but it does not distinguish a tax receipt from a research paper. A useful cleanup groups files according to why you will need them again.",
+      "Browsers, email clients, and collaboration tools all save files into Downloads. Documents, spreadsheets, images, archives, installers, code, audio, and video quickly end up in one folder with no consistent structure.",
+      "A bulk organizer should not make silent decisions. Cleanora keeps the planner metadata-based and explainable, reserves collision-safe destinations, rejects changed or expired plans, and requires explicit confirmation before moving selected files.",
     ],
     steps: [
-      "Remove obvious temporary downloads and duplicate installers.",
-      "Separate active files from material that should be archived.",
-      "Group kept files by purpose, such as Finance, Research, Clients, and Software.",
-      "Rename unclear files, then review and apply the proposed cleanup.",
+      "Choose Downloads or a copied test folder on Windows.",
+      "Select Smart, File type, or Modified date organization.",
+      "Inspect every category, reason, destination path, selection, and conflict in the preview.",
+      "Exclude anything you want to keep in place, confirm the plan, and use audit history if you need to undo eligible moves.",
     ],
     examples: [
       {
-        title: "Monthly cleanup",
-        before: "receipts, ZIP archives, screenshots, and installers in one folder",
-        after: "Finance/Receipts, Archives, Images, and Software/Installers",
+        title: "Mixed download types",
+        before: "report.pdf, photo-export.png, archive.zip, and setup.exe",
+        after: "Documents/PDF, Images, Archives, and Installers with original filenames preserved",
       },
       {
-        title: "Freelance work",
-        before: "contract-final.pdf, brief2.docx, invoice-7.pdf",
-        after: "Clients/Name/Contracts, Briefs, and Invoices",
+        title: "Modified-date archive",
+        before: "Files from several months mixed in one folder",
+        after: "Modified Date/Year/Year-Month destinations shown before moving",
       },
     ],
     comparison: {
@@ -281,9 +298,9 @@ export const seoPages: SeoPage[] = [
     },
     faqs: [
       {
-        question: "Should I delete everything in Downloads?",
+        question: "Does Cleanora delete files from Downloads?",
         answer:
-          "No. Treat Downloads as an inbox. Delete replaceable installers and duplicates, but move records, work files, and reference material into durable folders.",
+          "Cleanora's organization workflow moves selected files into reviewed destination folders. It is not presented as an automatic deletion tool.",
       },
       {
         question: "How often should Downloads be cleaned?",
@@ -293,14 +310,41 @@ export const seoPages: SeoPage[] = [
       {
         question: "Can Cleanora clean Downloads without internet access?",
         answer:
-          "Yes. Cleanora's file analysis and organization workflow runs locally.",
+          "Scanning and planning run locally. Internet access is used for purchase and license activation; the organizer does not send file contents to a remote classification service.",
       },
     ],
+    evidence: {
+      title: "Real interface captures and 58 passing backend tests",
+      summary:
+        "The captures below show Cleanora's metadata-only planning screen and the resulting Windows folder structure. On September 6, 2026, the backend regression suite passed all 58 scanner, classifier, planner, execution, audit, undo, licensing, and configuration tests.",
+      facts: [
+        { label: "Backend regression suite", value: "58 of 58 tests passed" },
+        { label: "Test-suite runtime", value: "3.503 seconds" },
+        { label: "Planner inputs", value: "Filename, extension, date, and metadata" },
+        { label: "Test computer", value: "Windows 11 Pro, Core i5-8350U, 8 GB RAM" },
+      ],
+      media: [
+        {
+          kind: "image",
+          src: "/evidence/cleanora-plan.png",
+          alt: "Cleanora Downloads folder organizer showing Smart, File type, and Modified date modes",
+          caption: "Cleanora's first step: select a Windows folder and choose an explainable organization mode before generating a plan.",
+        },
+        {
+          kind: "image",
+          src: "/evidence/cleanora-output.png",
+          alt: "Windows File Explorer showing folders created by a Cleanora organization run",
+          caption: "A local demonstration output in File Explorer with Archives, Code, Documents, Images, Installers, and Other categories.",
+        },
+      ],
+      note:
+        "The 3.503-second figure is the automated test-suite runtime, not a promise about how long a real Downloads folder will take. Folder speed varies with file count, disk performance, and security software.",
+    },
     related: [
-      "blog/organize-downloads-folder-automatically",
+      "blog/downloads-folder-organizer-test",
       "features/downloads-cleanup",
       "preview-file-moves-windows",
-      "blog/organize-pdfs-automatically",
+      "docs/how-it-works",
     ],
   },
   {
@@ -2002,6 +2046,108 @@ export const seoPages: SeoPage[] = [
       "ai-file-organizer",
       "alternatives/file-juggler",
       "blog/digital-file-minimalism",
+    ],
+  },
+  {
+    route: "blog/downloads-folder-organizer-test",
+    kind: "guide",
+    topic: "downloads",
+    title: "Downloads Folder Organizer Test | 58 Backend Checks",
+    h1: "Cleanora Downloads Folder Organizer Test",
+    description:
+      "See Cleanora's Windows test environment, 58 passing backend checks, real planner and output screenshots, representative classifications, and test limitations.",
+    eyebrow: "Reproducible product evidence",
+    updatedAt: "2026-09-06",
+    directAnswer:
+      "On September 6, 2026, Cleanora passed all 58 backend regression tests in 3.503 seconds on Windows 11 Pro with a Core i5-8350U and 8 GB of RAM. The suite covers metadata-only scanning, deterministic classifications, exact destination planning, conflicts, execution, audit history, and undo. Test-suite runtime is not the same as real-folder organization time.",
+    problemTitle: "What was verified and what still needs human review",
+    problem: [
+      "The regression suite verifies that the scanner can stay metadata-only, skip its own output tree and reparse points, respect file limits, and produce stable classification destinations. Execution tests cover changed source files, occupied destinations, interrupted moves, audit integrity, and undo conflicts.",
+      "Those checks prove expected behavior for defined cases; they do not prove that every ambiguous filename belongs in the category a particular user prefers. Cleanora therefore exposes the exact plan and lets the user exclude items before confirmation.",
+    ],
+    steps: [
+      "Copy a small representative set of noncritical files into a test folder.",
+      "Generate a Cleanora preview using Smart, File type, or Modified date mode.",
+      "Check the proposed reason, category, exact destination, and collision status for every file.",
+      "Exclude one item, apply the remaining test plan, inspect the audit entry, and exercise undo before using a larger folder.",
+    ],
+    examples: [
+      {
+        title: "Filename-specific classification",
+        before: "Screenshot_2026-08-20.png",
+        after: "Images/Screenshots, with the filename signal included in the reason",
+      },
+      {
+        title: "Explainable extension fallback",
+        before: "report.pdf",
+        after: "Documents/PDF, with the .pdf extension included in the reason",
+      },
+    ],
+    comparison: {
+      title: "Evidence, meaning, and limits",
+      summary: "The page separates automated checks from the user acceptance test that matters on a real folder.",
+      rows: [
+        {
+          option: "58 backend tests",
+          bestFor: "Scanner, planner, move, conflict, audit, undo, and licensing regressions",
+          tradeoff: "Defined fixtures cannot represent every user filename",
+        },
+        {
+          option: "Real interface captures",
+          bestFor: "Showing the selectable modes and resulting category folders",
+          tradeoff: "Screenshots do not measure throughput",
+        },
+        {
+          option: "Copied-folder acceptance test",
+          bestFor: "Checking whether the proposed structure fits your workflow",
+          tradeoff: "Requires a short human review before applying changes",
+        },
+      ],
+    },
+    faqs: [
+      {
+        question: "Does Cleanora read document contents during classification?",
+        answer: "No. The tested planner uses filenames, extensions, modified dates, and filesystem metadata. The current planner does not read file contents.",
+      },
+      {
+        question: "Do 58 passing tests mean no file move can ever fail?",
+        answer: "No. They cover known regression cases. Permissions, security software, storage errors, and external changes can still interrupt a real operation, so backups and a copied test folder are recommended.",
+      },
+      {
+        question: "Why is preview important if classifications are deterministic?",
+        answer: "A consistent rule can still be wrong for a person's preferred folder structure. Preview makes that preference visible before any selected file moves.",
+      },
+    ],
+    evidence: {
+      title: "Observed Cleanora test evidence",
+      summary: "The automated suite and interface captures document different parts of the same review-first workflow.",
+      facts: [
+        { label: "Backend tests", value: "58 passed, 0 failed" },
+        { label: "Automated suite time", value: "3.503 seconds" },
+        { label: "Supported test OS", value: "Windows 11 Pro" },
+        { label: "Test hardware", value: "Core i5-8350U, 8 GB RAM" },
+      ],
+      media: [
+        {
+          kind: "image",
+          src: "/evidence/cleanora-plan.png",
+          alt: "Cleanora local file planning screen on Windows",
+          caption: "The product exposes Smart, File type, and Modified date modes before the plan is created.",
+        },
+        {
+          kind: "image",
+          src: "/evidence/cleanora-output.png",
+          alt: "Cleanora organized output folders displayed in Windows File Explorer",
+          caption: "Observed demonstration output displayed directly in Windows File Explorer.",
+        },
+      ],
+      note: "No accuracy percentage or real-folder speed guarantee is inferred from the regression-suite runtime. Those require a larger labeled dataset and repeated end-to-end measurements.",
+    },
+    related: [
+      "clean-downloads-folder",
+      "preview-file-moves-windows",
+      "docs/how-it-works",
+      "docs/troubleshooting",
     ],
   },
 ];
