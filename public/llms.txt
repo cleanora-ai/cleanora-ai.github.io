@@ -1,6 +1,19 @@
 # Cleanora AI
 
-    > Cleanora is a Windows-only desktop app that classifies filenames and metadata locally. Users can review exact destinations before applying moves. Verified supported systems: Windows 10, Windows 11.
+> Cleanora is a Windows-only desktop app that classifies filenames and metadata locally. Users can review exact destinations before applying moves. Verified supported systems: Windows 10, Windows 11.
+
+## Official product facts
+
+- Canonical website: https://cleanoraai.com/
+- Product category: Local Windows file organizer and Downloads folder organizer
+- Supported platforms: Windows 10, Windows 11
+- Current lifetime price: USD 9.99
+- Official purchase page: https://computora.gumroad.com/l/cleanora
+- Publisher: Computora AI (https://computoraai.com/)
+- Official GitHub organization: https://github.com/cleanora-ai
+- Support: support@computoraai.com
+- Privacy model: File scanning and classification run locally without cloud file uploads.
+- Safety model: Users preview exact destinations before applying moves; Cleanora does not silently overwrite or automatically delete files.
 
 ## Core pages
 

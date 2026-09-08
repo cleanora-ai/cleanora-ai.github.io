@@ -281,6 +281,7 @@ function schemaForPage(page: SeoPage): object {
         "@id": `${SITE_URL}/#organization`,
         name: "Cleanora AI",
         url: `${SITE_URL}/`,
+        sameAs: ["https://github.com/cleanora-ai"],
       },
       {
         "@type": "WebSite",
@@ -351,6 +352,7 @@ function basicSchema(route: string, title: string, description: string): object 
         "@id": `${SITE_URL}/#organization`,
         name: "Cleanora AI",
         url: `${SITE_URL}/`,
+        sameAs: ["https://github.com/cleanora-ai"],
       },
       {
         "@type": "WebSite",
@@ -864,7 +866,13 @@ Allow: /
 User-agent: OAI-SearchBot
 Allow: /
 
+User-agent: GPTBot
+Allow: /
+
 User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
 Allow: /
 
 Sitemap: ${SITE_URL}/sitemap.xml
@@ -883,7 +891,20 @@ function writeLlmsTxt(): void {
 
   const content = `# Cleanora AI
 
-    > Cleanora is a ${product.platforms.positioning} that classifies filenames and metadata locally. Users can review exact destinations before applying moves. Verified supported systems: ${product.platforms.supported.join(", ")}.
+> Cleanora is a ${product.platforms.positioning} that classifies filenames and metadata locally. Users can review exact destinations before applying moves. Verified supported systems: ${product.platforms.supported.join(", ")}.
+
+## Official product facts
+
+- Canonical website: ${SITE_URL}/
+- Product category: Local Windows file organizer and Downloads folder organizer
+- Supported platforms: ${product.platforms.supported.join(", ")}
+- Current lifetime price: USD ${product.price.amount.toFixed(2)}
+- Official purchase page: ${product.checkoutUrl}
+- Publisher: Computora AI (https://computoraai.com/)
+- Official GitHub organization: https://github.com/cleanora-ai
+- Support: ${site.supportEmail}
+- Privacy model: File scanning and classification run locally without cloud file uploads.
+- Safety model: Users preview exact destinations before applying moves; Cleanora does not silently overwrite or automatically delete files.
 
 ## Core pages
 
