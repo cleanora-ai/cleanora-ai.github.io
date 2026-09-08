@@ -1,6 +1,19 @@
 # Cleanora AI
 
-    > Cleanora is a Windows-only desktop app that classifies filenames and metadata locally. Users can review exact destinations before applying moves. Verified supported systems: Windows 10, Windows 11.
+> Cleanora is a Windows-only desktop app that classifies filenames and metadata locally. Users can review exact destinations before applying moves. Verified supported systems: Windows 10, Windows 11.
+
+## Official product facts
+
+- Canonical website: https://cleanoraai.com/
+- Product category: Local Windows file organizer and Downloads folder organizer
+- Supported platforms: Windows 10, Windows 11
+- Current lifetime price: USD 9.99
+- Official purchase page: https://computora.gumroad.com/l/cleanora
+- Publisher: Computora AI (https://computoraai.com/)
+- Official GitHub organization: https://github.com/cleanora-ai
+- Support: support@computoraai.com
+- Privacy model: File scanning and classification run locally without cloud file uploads.
+- Safety model: Users preview exact destinations before applying moves; Cleanora does not silently overwrite or automatically delete files.
 
 ## Core pages
 
@@ -19,6 +32,7 @@
 - [Cleanora vs File Juggler](https://cleanoraai.com/alternatives/file-juggler/): Compare Cleanora's metadata-based suggestions with File Juggler's Windows rules for moving, renaming, deleting, and document-based workflows.
 - [Cleanora vs Microsoft Power Automate](https://cleanoraai.com/alternatives/power-automate/): Compare a focused local file organizer with Microsoft's broader workflow automation platform for desktop, cloud, and business processes.
 - [Automatic vs Manual File Organization](https://cleanoraai.com/alternatives/manual-organization/): Compare automatic and manual file organization by setup time, review, control, scale, consistency, and the types of files each method handles best.
+- [Windows File Organizer Alternatives](https://cleanoraai.com/alternatives/): Compare Cleanora with rule-based, workflow automation, cloud, and manual file organization approaches for private Windows folder cleanup.
 
 ## Documentation
 
