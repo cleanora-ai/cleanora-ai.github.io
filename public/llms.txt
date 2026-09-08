@@ -19,6 +19,7 @@
 - [Cleanora vs File Juggler](https://cleanoraai.com/alternatives/file-juggler/): Compare Cleanora's metadata-based suggestions with File Juggler's Windows rules for moving, renaming, deleting, and document-based workflows.
 - [Cleanora vs Microsoft Power Automate](https://cleanoraai.com/alternatives/power-automate/): Compare a focused local file organizer with Microsoft's broader workflow automation platform for desktop, cloud, and business processes.
 - [Automatic vs Manual File Organization](https://cleanoraai.com/alternatives/manual-organization/): Compare automatic and manual file organization by setup time, review, control, scale, consistency, and the types of files each method handles best.
+- [Windows File Organizer Alternatives](https://cleanoraai.com/alternatives/): Compare Cleanora with rule-based, workflow automation, cloud, and manual file organization approaches for private Windows folder cleanup.
 
 ## Documentation
 
