@@ -34,6 +34,13 @@ export function softwareApplicationSchema() {
     description:
       "Cleanora helps Windows users scan cluttered folders locally, review exact destinations, and apply approved file moves with a local audit trail.",
     featureList: product.claims,
+    offers: {
+      "@type": "Offer",
+      price: product.price.amount.toFixed(2),
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+      url: product.checkoutUrl,
+    },
     publisher: { "@id": `${site.url}/#organization` },
   };
 }
