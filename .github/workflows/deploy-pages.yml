@@ -46,3 +46,18 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  indexnow:
+    name: Notify IndexNow
+    needs: deploy
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Submit sitemap URLs
+        run: node scripts/submit-indexnow.mjs https://cleanoraai.com ac1c710eaaec4f719516f4cde1515a8b public/sitemap.xml
