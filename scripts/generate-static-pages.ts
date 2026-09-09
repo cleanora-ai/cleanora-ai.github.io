@@ -55,9 +55,9 @@ const supportPages: SupportPage[] = [
 const redirects: Record<string, string> = {
   "rename-files-automatically": "preview-file-moves-windows",
   "blog/rename-files-automatically": "preview-file-moves-windows",
-  "blog/ai-file-organizer-for-windows": "best-file-organizer-windows",
+  "blog/ai-file-organizer-for-windows": "clean-downloads-folder",
   "blog/organize-work-files": "blog/desktop-file-management",
-  "alternatives/dropit": "best-file-organizer-windows",
+  "alternatives/dropit": "alternatives",
 };
 
 const staleRoutes = ["features/smart-file-renaming"];
@@ -88,6 +88,14 @@ function stripIndent(value: string): string {
 
 function absoluteUrl(route = ""): string {
   return `${SITE_URL}/${route ? `${route}/` : ""}`;
+}
+
+function canonicalUrl(page: SeoPage): string {
+  return page.canonicalUrl ?? absoluteUrl(page.route);
+}
+
+function relatedHref(route: string): string {
+  return seoPagesByRoute[route]?.canonicalUrl ?? `/${route}/`;
 }
 
 function writeRoute(route: string, html: string): void {
@@ -251,7 +259,7 @@ function breadcrumbItems(route: string, title: string) {
     alternatives: "alternatives",
     "use-cases": "category/productivity",
     docs: "docs/how-it-works",
-    features: "ai-file-organizer",
+    features: "clean-downloads-folder",
     category: "",
   };
 
@@ -272,6 +280,7 @@ function breadcrumbItems(route: string, title: string) {
 function schemaForPage(page: SeoPage): object {
   const breadcrumbs = breadcrumbItems(page.route, page.h1);
   const articleKinds = new Set(["guide", "comparison", "use-case"]);
+  const pageUrl = canonicalUrl(page);
 
   return {
     "@context": "https://schema.org",
@@ -282,6 +291,12 @@ function schemaForPage(page: SeoPage): object {
         name: "Cleanora AI",
         url: `${SITE_URL}/`,
         sameAs: ["https://github.com/cleanora-ai"],
+        parentOrganization: {
+          "@type": "Organization",
+          "@id": "https://computoraai.com/#organization",
+          name: "Computora AI",
+          url: "https://computoraai.com/",
+        },
       },
       {
         "@type": "WebSite",
@@ -292,8 +307,8 @@ function schemaForPage(page: SeoPage): object {
       },
       {
         "@type": articleKinds.has(page.kind) ? "Article" : "WebPage",
-        "@id": `${absoluteUrl(page.route)}#page`,
-        url: absoluteUrl(page.route),
+        "@id": `${pageUrl}#page`,
+        url: pageUrl,
         headline: page.h1,
         name: page.title,
         description: page.description,
@@ -323,10 +338,11 @@ function schemaForPage(page: SeoPage): object {
           },
         })),
       },
-      ...(page.route === "ai-file-organizer"
+      ...(page.route === "clean-downloads-folder"
         ? [
             {
               "@type": "SoftwareApplication",
+              "@id": `${SITE_URL}/#software`,
               name: product.productName,
               url: `${SITE_URL}/`,
               applicationCategory: "FileManagementApplication",
@@ -353,6 +369,12 @@ function basicSchema(route: string, title: string, description: string): object 
         name: "Cleanora AI",
         url: `${SITE_URL}/`,
         sameAs: ["https://github.com/cleanora-ai"],
+        parentOrganization: {
+          "@type": "Organization",
+          "@id": "https://computoraai.com/#organization",
+          name: "Computora AI",
+          url: "https://computoraai.com/",
+        },
       },
       {
         "@type": "WebSite",
@@ -504,7 +526,10 @@ function renderEvidence(page: SeoPage): string {
 }
 
 function renderMainPage(page: SeoPage): string {
-  const canonical = absoluteUrl(page.route);
+  const canonical = canonicalUrl(page);
+  const robots = page.indexable === false
+    ? "noindex,follow"
+    : "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1";
   const breadcrumbs = breadcrumbItems(page.route, page.h1);
   const schema = JSON.stringify(schemaForPage(page)).replaceAll("<", "\\u003c");
   const downloadHref = "/#download";
@@ -516,7 +541,7 @@ function renderMainPage(page: SeoPage): string {
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>${escapeHtml(page.title)} | Cleanora</title>
   <meta name="description" content="${escapeHtml(page.description)}">
-  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="robots" content="${robots}">
   <link rel="canonical" href="${canonical}">
   <link rel="icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -542,7 +567,7 @@ ${analyticsHead()}
     <nav class="container" aria-label="Primary navigation">
       <a class="brand" href="/">Cleanora AI</a>
       <div class="links">
-        <a href="/ai-file-organizer/">Product</a>
+        <a href="/clean-downloads-folder/">Product</a>
         <a href="/category/productivity/">Guides</a>
         <a href="/alternatives/">Comparisons</a>
         <a href="/docs/privacy/">Privacy</a>
@@ -626,7 +651,7 @@ ${renderEvidence(page)}
       <div class="related">
         ${page.related
           .map(
-            (route) => `<a href="/${route}/">${escapeHtml(relatedTitle(route))}</a>`,
+            (route) => `<a href="${relatedHref(route)}">${escapeHtml(relatedTitle(route))}</a>`,
           )
           .join("")}
       </div>
@@ -735,7 +760,7 @@ ${analyticsHead()}
   <style>${pageStyles()}</style>
 </head>
 <body>
-  <header><nav class="container"><a class="brand" href="/">Cleanora AI</a><a href="/ai-file-organizer/">Product</a><a href="/docs/privacy/">Privacy</a></nav></header>
+  <header><nav class="container"><a class="brand" href="/">Cleanora AI</a><a href="/clean-downloads-folder/">Product</a><a href="/docs/privacy/">Privacy</a></nav></header>
   <div class="container breadcrumbs"><a href="/">Home</a> / <span>${escapeHtml(page.title)}</span></div>
   <section class="hero"><div class="container"><div class="eyebrow">${escapeHtml(page.kind)}</div><h1>${escapeHtml(page.title)}</h1><p class="lede">${escapeHtml(page.description)}</p></div></section>
   <main class="container">
@@ -744,7 +769,7 @@ ${analyticsHead()}
     <section><h2>Step-by-step</h2><ol>${steps.map((step) => `<li>${escapeHtml(step)}</li>`).join("")}<li>Review the proposed result before applying changes to important files.</li></ol></section>
     <section><h2>Example</h2><div class="card"><p>Start with a small representative folder, confirm that the resulting names and locations match your workflow, and only then process a larger collection.</p></div></section>
     <section><h2>Frequently asked questions</h2>${faqs.map((faq) => `<article class="faq"><h3>${escapeHtml(faq.question)}</h3><p>${escapeHtml(faq.answer)}</p></article>`).join("")}</section>
-    <section><h2>Related resources</h2><div class="related"><a href="/ai-file-organizer/">AI File Organizer</a><a href="/organize-files-windows/">Organize Files on Windows</a><a href="/features/offline-processing/">Offline Processing</a><a href="/docs/privacy/">Cleanora Privacy</a></div></section>
+    <section><h2>Related resources</h2><div class="related"><a href="/clean-downloads-folder/">Downloads Folder Organizer</a><a href="/preview-file-moves-windows/">Preview File Moves</a><a href="/features/offline-processing/">Offline Processing</a><a href="/docs/privacy/">Cleanora Privacy</a></div></section>
   </main>
   <footer><div class="container">Cleanora AI</div></footer>
 </body>
@@ -757,12 +782,15 @@ function renderCategoryPage(slug: string): string {
   const metaDescription = `${category.description} Browse practical Cleanora guides, workflows, examples, comparisons, and related resources.`;
   const topicPages = seoPages.filter(
     (page) =>
-      page.topic === slug ||
-      (slug === "productivity" && page.topic === "workflows") ||
-      (slug === "downloads" && page.route.includes("download")) ||
-      (slug === "windows" && page.kind === "comparison"),
+      page.indexable !== false &&
+      (page.topic === slug ||
+        (slug === "productivity" && page.topic === "workflows") ||
+        (slug === "downloads" && page.route.includes("download")) ||
+        (slug === "windows" && page.kind === "comparison")),
   );
-  const listedPages = topicPages.length ? topicPages : seoPages.slice(0, 6);
+  const listedPages = topicPages.length
+    ? topicPages
+    : seoPages.filter((page) => page.indexable !== false).slice(0, 6);
   const schema = JSON.stringify(
     basicSchema(route, category.title, metaDescription),
   ).replaceAll("<", "\\u003c");
@@ -794,14 +822,14 @@ ${analyticsHead()}
   <style>${pageStyles()}</style>
 </head>
 <body>
-  <header><nav class="container"><a class="brand" href="/">Cleanora AI</a><a href="/ai-file-organizer/">Product</a><a href="/alternatives/">Comparisons</a></nav></header>
+  <header><nav class="container"><a class="brand" href="/">Cleanora AI</a><a href="/clean-downloads-folder/">Product</a><a href="/alternatives/">Comparisons</a></nav></header>
   <div class="container breadcrumbs"><a href="/">Home</a> / <span>Topics</span> / <span>${escapeHtml(category.title)}</span></div>
   <section class="hero"><div class="container"><div class="eyebrow">Topic hub</div><h1>${escapeHtml(category.title)}</h1><p class="lede">${escapeHtml(category.description)} Start with the guide that matches your folder, document type, or workflow.</p></div></section>
   <main class="container">
     <section class="answer"><h2>Direct answer</h2><p>${escapeHtml(category.description)} The resources below cover practical steps, examples, tool comparisons, and related workflows rather than repeating one generic organization template.</p></section>
     <section><h2>Guides in this topic</h2><div class="grid">${listedPages
       .map(
-        (page) => `<article class="card"><h3><a href="/${page.route}/">${escapeHtml(page.h1)}</a></h3><p>${escapeHtml(page.description)}</p></article>`,
+        (page) => `<article class="card"><h3><a href="${relatedHref(page.route)}">${escapeHtml(page.h1)}</a></h3><p>${escapeHtml(page.description)}</p></article>`,
       )
       .join("")}</div></section>
     <section><h2>How to choose a guide</h2><ol><li>Start with the folder or file type causing the most repeated work.</li><li>Use a persona guide when retention, privacy, or project structure matters.</li><li>Read a comparison page before adopting a new automation tool.</li><li>Test every workflow on a small backed-up folder.</li></ol></section>
@@ -882,7 +910,11 @@ Sitemap: ${SITE_URL}/sitemap.xml
 
 function writeLlmsTxt(): void {
   const featured = seoPages
-    .filter((page) => ["landing", "comparison", "use-case"].includes(page.kind))
+    .filter(
+      (page) =>
+        page.indexable !== false &&
+        ["landing", "comparison", "use-case"].includes(page.kind),
+    )
     .map(
       (page) =>
         `- [${page.h1}](${absoluteUrl(page.route)}): ${page.description}`,

@@ -70,9 +70,32 @@ export interface SeoPage {
   related: string[];
   evidence?: SeoEvidence;
   indexable?: boolean;
+  canonicalUrl?: string;
 }
 
 const updatedAt = "2026-09-08";
+
+// These broader intents belong to Foldora (general files) or Galoria (images).
+// Keep the legacy Cleanora URLs available for visitors, but consolidate search
+// signals to the product with the clearest scope instead of making our own
+// domains compete for the same query.
+const canonicalOwnerByRoute: Record<string, string> = {
+  "ai-file-organizer": "https://foldoraai.com/ai-file-organizer/",
+  "best-file-organizer-windows": "https://foldoraai.com/best-file-organizer-windows/",
+  "organize-files-windows": "https://foldoraai.com/organize-files-windows/",
+  "windows-file-organizer": "https://foldoraai.com/best-file-organizer-windows/",
+  "organize-files-automatically": "https://foldoraai.com/organize-files-automatically/",
+  "blog/organize-pdfs-automatically": "https://foldoraai.com/blog/organize-pdfs-automatically/",
+  "blog/organize-screenshots-automatically": "https://galoriaai.com/organize-screenshots-automatically/",
+  "blog/organize-research-documents": "https://foldoraai.com/blog/organize-research-documents/",
+  "blog/organize-invoices-automatically": "https://foldoraai.com/blog/organize-invoices-automatically/",
+  "blog/desktop-file-management": "https://foldoraai.com/blog/desktop-file-management/",
+  "blog/offline-ai-file-organizer": "https://foldoraai.com/blog/offline-ai-file-organizer/",
+  "use-cases/students": "https://foldoraai.com/use-cases/students/",
+  "use-cases/freelancers": "https://foldoraai.com/use-cases/freelancers/",
+  "use-cases/researchers": "https://foldoraai.com/use-cases/researchers/",
+  "use-cases/accountants": "https://foldoraai.com/use-cases/accountants/",
+};
 
 export const seoPages: SeoPage[] = [
   {
@@ -2231,7 +2254,12 @@ export const seoPages: SeoPage[] = [
       "alternatives/manual-organization",
     ],
   },
-];
+].map((page) => {
+  const canonicalUrl = canonicalOwnerByRoute[page.route];
+  return canonicalUrl
+    ? { ...page, indexable: false, canonicalUrl }
+    : page;
+});
 
 export const seoPagesByRoute = Object.fromEntries(
   seoPages.map((page) => [page.route, page]),

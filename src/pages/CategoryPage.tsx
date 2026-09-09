@@ -68,6 +68,7 @@ const CategoryPage = () => {
 
               {seoPages
                 .filter((page) => {
+                  if (page.indexable === false) return false;
                   if (slug === "productivity") return page.topic === "workflows";
                   if (slug === "downloads") return page.topic === "downloads";
                   return page.topic === slug;
@@ -75,7 +76,7 @@ const CategoryPage = () => {
                 .map((post) => (
                   <a
                     key={post.route}
-                    href={`/${post.route}/`}
+                    href={post.canonicalUrl ?? `/${post.route}/`}
                     className="rounded-2xl border border-border bg-card p-8 transition-colors hover:border-primary/40"
                   >
                     <h2 className="text-2xl font-bold">

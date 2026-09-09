@@ -1,13 +1,13 @@
 const articles = [
   {
-    title: "Local file organizer",
-    href: "/ai-file-organizer/",
-    description: "When metadata-based organization is useful, where custom rules are better, and how previews reduce filing mistakes.",
+    title: "Downloads folder organizer",
+    href: "/clean-downloads-folder/",
+    description: "A focused workflow for sorting a busy Downloads folder with explainable, reviewable destinations.",
   },
   {
-    title: "Clean Downloads automatically",
-    href: "/clean-downloads-folder/",
-    description: "A practical workflow for documents, screenshots, installers, invoices, and temporary files.",
+    title: "Maintain Downloads automatically",
+    href: "/blog/organize-downloads-folder-automatically/",
+    description: "A repeatable routine for documents, installers, archives, screenshots, and temporary files.",
   },
   {
     title: "Preview file moves",
@@ -15,9 +15,9 @@ const articles = [
     description: "How exact destination previews, conflict checks, and confirmation reduce bulk filing mistakes.",
   },
   {
-    title: "Offline file organizer",
-    href: "/blog/offline-ai-file-organizer/",
-    description: "What local processing protects, what it does not, and what to verify before using any file organizer.",
+    title: "Cleanora classification test",
+    href: "/blog/downloads-folder-organizer-test/",
+    description: "See the tested filename and extension cases behind Cleanora's Downloads organization workflow.",
   },
   {
     title: "Cleanora vs File Juggler",

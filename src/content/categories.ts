@@ -13,10 +13,10 @@ export const categories = {
   },
 
   productivity: {
-    title: "File Organization Productivity",
+    title: "Downloads Cleanup Productivity",
 
     description:
-      "Improve productivity using reviewable local file organization.",
+      "Reduce repeated Downloads cleanup with reviewable local organization.",
 
     posts: [
       "desktop-file-management",
@@ -26,10 +26,10 @@ export const categories = {
   },
 
   windows: {
-    title: "Windows File Organization",
+    title: "Windows Downloads Organization",
 
     description:
-      "Organize Windows files using deterministic local classification.",
+      "Organize a Windows Downloads folder using deterministic local classification.",
 
     posts: [
       "ai-file-organizer-for-windows",
@@ -38,10 +38,10 @@ export const categories = {
   },
 
   privacy: {
-    title: "Offline Organization & Privacy",
+    title: "Private Downloads Organization",
 
     description:
-      "Discover privacy-first offline file organization.",
+      "Understand privacy-first organization for files arriving in Downloads.",
 
     posts: [
       "offline-ai-file-organizer",

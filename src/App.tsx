@@ -57,9 +57,9 @@ const App = () => (
             <Route path="/rename-files-automatically" element={<Navigate to="/preview-file-moves-windows/" replace />} />
             <Route path="/alternatives/cloud-organizers" element={<SeoContentPage />} />
             <Route path="/blog/rename-files-automatically" element={<Navigate to="/preview-file-moves-windows/" replace />} />
-            <Route path="/blog/ai-file-organizer-for-windows" element={<Navigate to="/best-file-organizer-windows/" replace />} />
+            <Route path="/blog/ai-file-organizer-for-windows" element={<Navigate to="/clean-downloads-folder/" replace />} />
             <Route path="/blog/organize-work-files" element={<Navigate to="/blog/desktop-file-management/" replace />} />
-            <Route path="/alternatives/dropit" element={<Navigate to="/best-file-organizer-windows/" replace />} />
+            <Route path="/alternatives/dropit" element={<Navigate to="/alternatives/" replace />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
