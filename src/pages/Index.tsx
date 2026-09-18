@@ -30,8 +30,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <SeoHead
-        title="Cleanora AI File Organizer for Windows | Local, Private, and Reversible"
-        description="Cleanora classifies messy Windows folders from filenames and metadata, previews exact destinations, and applies only reviewed file moves with a local audit trail."
+        title="Cleanora AI | Preview-First Windows Folder Cleanup"
+        description="Cleanora cleans up Windows folders using filenames and metadata. Review exact destinations and conflicts before moves, with a local audit trail and undo."
         canonical={absoluteUrl()}
         schema={homepageSchema(homepageFaqs)}
       />
