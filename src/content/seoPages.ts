@@ -617,7 +617,7 @@ export const seoPages: SeoPage[] = [
     route: "preview-file-moves-windows",
     kind: "landing",
     topic: "workflows",
-    title: "Preview File Moves on Windows | Conflict-Safe Organization",
+    title: "Preview File Moves Safely on Windows",
     h1: "Preview File Moves Before Organizing Windows Folders",
     description:
       "Preview exact file destinations, conflicts, categories, and reasons on Windows before confirming a bulk organization plan with Cleanora.",

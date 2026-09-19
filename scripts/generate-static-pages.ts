@@ -15,6 +15,8 @@ import { product, site } from "../src/config/product";
 const SITE_URL = site.url;
 const BUNDLE_URL = "https://computora.gumroad.com/l/computoraai";
 const OUTPUT_DIR = path.resolve("public");
+const SOCIAL_IMAGE_PATH = "/social-preview.png";
+const SOCIAL_IMAGE_URL = `${SITE_URL}${SOCIAL_IMAGE_PATH}`;
 const UPDATED_AT = "2026-09-08";
 const HOMEPAGE_UPDATED_AT = "2026-09-18";
 
@@ -552,12 +554,14 @@ function renderMainPage(page: SeoPage): string {
   <meta property="og:description" content="${escapeHtml(page.description)}">
   <meta property="og:url" content="${canonical}">
   <meta property="og:site_name" content="Cleanora AI">
-  <meta property="og:image" content="${SITE_URL}/icon-512.png">
+  <meta property="og:image" content="${SOCIAL_IMAGE_URL}">
   <meta property="og:image:alt" content="${escapeHtml(page.title)} — Cleanora AI">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeHtml(page.title)}">
-  <meta name="twitter:image" content="${SITE_URL}/icon-512.png">
+  <meta name="twitter:image" content="${SOCIAL_IMAGE_URL}">
   <meta name="twitter:description" content="${escapeHtml(page.description)}">
   <script type="application/ld+json">${schema}</script>
 ${analyticsHead()}
@@ -664,7 +668,7 @@ ${renderEvidence(page)}
       <a class="button secondary" href="${BUNDLE_URL}" target="_blank" rel="noopener noreferrer">Get the complete bundle</a>
     </section>
   </main>
-  <footer><div class="container">Cleanora AI - Local, metadata-based Downloads organization<div class="footer-links"><a href="https://computoraai.com/">Computora AI desktop software</a><a href="https://foldoraai.com/">Foldora AI file organizer</a><a href="https://galoriaai.com/">Galoria AI photo organizer</a></div></div></footer>
+  <footer><div class="container">Cleanora AI - Local, metadata-based Downloads organization<div class="footer-links"><a href="/category/downloads/">Downloads guides</a><a href="/category/windows/">Windows guides</a><a href="/category/privacy/">Privacy guides</a><a href="/docs/supported-file-types/">Supported file types</a><a href="https://computoraai.com/">Computora AI desktop software</a><a href="https://foldoraai.com/">Foldora AI file organizer</a><a href="https://galoriaai.com/">Galoria AI photo organizer</a></div></div></footer>
 </body>
 </html>`;
 }
@@ -711,7 +715,10 @@ function supportFaqs(page: SupportPage): SeoFaq[] {
 function renderSupportPage(page: SupportPage): string {
   const canonicalRoute = page.canonicalTarget ?? page.route;
   const canonical = absoluteUrl(canonicalRoute);
-  const metaDescription = `${page.description} Follow practical setup, review, privacy, and troubleshooting guidance for Cleanora.`;
+  const metaDescription =
+    page.description.length >= 80
+      ? page.description
+      : `${page.description} Review the verified formats before organizing a folder.`;
   const robots = page.indexable
     ? "index,follow,max-snippet:-1"
     : "noindex,follow";
@@ -751,10 +758,13 @@ function renderSupportPage(page: SupportPage): string {
   <meta property="og:description" content="${escapeHtml(metaDescription)}">
   <meta property="og:url" content="${canonical}">
   <meta property="og:site_name" content="Cleanora AI">
-  <meta property="og:image" content="${SITE_URL}/icon-512.png">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="${SOCIAL_IMAGE_URL}">
+  <meta property="og:image:alt" content="Cleanora previewing a local file-organization plan">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeHtml(page.title)}">
-  <meta name="twitter:image" content="${SITE_URL}/icon-512.png">
+  <meta name="twitter:image" content="${SOCIAL_IMAGE_URL}">
   <meta name="twitter:description" content="${escapeHtml(metaDescription)}">
   <script type="application/ld+json">${schema}</script>
 ${analyticsHead()}
@@ -780,7 +790,7 @@ ${analyticsHead()}
 function renderCategoryPage(slug: string): string {
   const category = categories[slug as keyof typeof categories];
   const route = `category/${slug}`;
-  const metaDescription = `${category.description} Browse practical Cleanora guides, workflows, examples, comparisons, and related resources.`;
+  const metaDescription = `${category.description} Find focused Cleanora guides and comparisons.`;
   const topicPages = seoPages.filter(
     (page) =>
       page.indexable !== false &&
@@ -813,10 +823,13 @@ function renderCategoryPage(slug: string): string {
   <meta property="og:description" content="${escapeHtml(metaDescription)}">
   <meta property="og:url" content="${absoluteUrl(route)}">
   <meta property="og:site_name" content="Cleanora AI">
-  <meta property="og:image" content="${SITE_URL}/icon-512.png">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="${SOCIAL_IMAGE_URL}">
+  <meta property="og:image:alt" content="Cleanora previewing a local file-organization plan">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeHtml(category.title)}">
-  <meta name="twitter:image" content="${SITE_URL}/icon-512.png">
+  <meta name="twitter:image" content="${SOCIAL_IMAGE_URL}">
   <meta name="twitter:description" content="${escapeHtml(metaDescription)}">
   <script type="application/ld+json">${schema}</script>
 ${analyticsHead()}
