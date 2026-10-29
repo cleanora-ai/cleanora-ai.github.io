@@ -432,28 +432,29 @@ function analyticsHead(): string {
 
 function pageStyles(): string {
   return `
-    :root{color-scheme:dark;--bg:#020817;--card:#0f172a;--line:#243244;--text:#e2e8f0;--muted:#a8b3c5;--green:#22c55e}
+    :root{color-scheme:dark;--bg:#0d1110;--card:#171d1a;--line:#303b35;--text:#f0f4f1;--muted:#afbbb3;--green:#65d6a0;--teal:#55c8bd;--gradient:linear-gradient(135deg,var(--green),var(--teal))}
     *{box-sizing:border-box}
-    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.7}
-    a{color:#86efac}
+    body{margin:0;padding-top:64px;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+    a{color:#8be4b4}a:focus-visible{outline:2px solid var(--green);outline-offset:3px}
     .container{width:min(100% - 40px,980px);margin-inline:auto}
-    header{border-bottom:1px solid var(--line);background:rgba(2,8,23,.96)}
+    header{position:fixed;z-index:50;inset:0 0 auto;border-bottom:1px solid var(--line);background:rgba(13,17,16,.9);backdrop-filter:blur(16px)}
     nav{display:flex;align-items:center;justify-content:space-between;min-height:64px;gap:24px}
     nav .links{display:flex;gap:20px;flex-wrap:wrap}
     nav a{text-decoration:none;color:var(--text)}
-    .brand{font-weight:800}
-    .hero{padding:72px 0 56px;border-bottom:1px solid var(--line)}
-    .eyebrow{color:#86efac;font-size:.85rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
-    h1{max-width:850px;margin:12px 0 20px;color:white;font-size:clamp(2.5rem,7vw,4.5rem);line-height:1.05;letter-spacing:-.04em}
-    h2{margin:0 0 18px;color:white;font-size:clamp(1.65rem,4vw,2.35rem);line-height:1.2}
+    .brand{display:flex;align-items:center;gap:9px;color:var(--text);font-weight:800;white-space:nowrap}.brand img{width:32px;height:32px;object-fit:contain}
+    nav .links{align-items:center;gap:24px}nav .links a{color:var(--muted);font-size:.9rem}.nav-cta{padding:9px 16px;border-radius:8px;background:var(--gradient);color:#10231a!important;font-weight:800;white-space:nowrap}
+    .hero{padding:56px 0 64px;border-bottom:1px solid var(--line)}
+    .eyebrow{color:#8be4b4;font-size:.85rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+    h1{max-width:850px;margin:12px 0 20px;color:white;font-size:3.5rem;line-height:1.08;letter-spacing:0}
+    h2{margin:0 0 18px;color:white;font-size:2rem;line-height:1.25;letter-spacing:0}
     h3{color:white;line-height:1.3}
     .lede{max-width:760px;color:var(--muted);font-size:1.2rem}
     .breadcrumbs{padding-top:28px;color:var(--muted);font-size:.9rem}
     .breadcrumbs a{color:var(--muted)}
     main{padding:60px 0 90px}
     section{margin-bottom:64px}
-    .answer,.card,.cta{border:1px solid var(--line);border-radius:20px;background:var(--card);padding:28px}
-    .answer{border-left:4px solid var(--green)}
+    .answer,.card,.cta{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:28px}
+    .answer{border-color:rgba(101,214,160,.45)}
     .answer p{font-size:1.1rem;margin:0}
     .updated{margin-top:16px;color:#7f8ba0;font-size:.85rem}
     ol{padding-left:24px}
@@ -461,7 +462,7 @@ function pageStyles(): string {
     .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
     .card p{color:var(--muted)}
     .label{margin-bottom:4px;color:#7f8ba0;font-size:.78rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
-    table{width:100%;border-collapse:collapse;border:1px solid var(--line);background:var(--card)}
+    .table-wrap{max-width:100%;overflow-x:auto;border:1px solid var(--line);border-radius:12px}table{width:100%;min-width:680px;border-collapse:collapse;background:var(--card)}
     th,td{padding:16px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
     th{color:white}
     td{color:var(--muted)}
@@ -480,11 +481,11 @@ function pageStyles(): string {
     .related{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
     .related a{display:block;padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--card);text-decoration:none;color:white}
     .cta{text-align:center}
-    .button{display:inline-block;margin-top:16px;padding:13px 22px;border-radius:999px;background:var(--green);color:#052e16;text-decoration:none;font-weight:800}.button.secondary{margin-left:8px;background:transparent;color:var(--ink);border:1px solid var(--line)}
+    .button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;margin-top:16px;padding:12px 22px;border-radius:8px;background:var(--gradient);color:#10231a;text-decoration:none;font-weight:800}.button.secondary{margin-left:8px;background:transparent;color:var(--text);border:1px solid var(--line)}
     footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted)}
     footer a{color:var(--muted)}
     .footer-links{display:flex;flex-wrap:wrap;gap:14px;margin-top:10px}
-    @media(max-width:700px){.grid,.related,.evidence-facts{grid-template-columns:1fr}.links{display:none!important}th,td{padding:12px;font-size:.9rem}}`;
+    @media(max-width:800px){nav .links,.nav-cta{display:none!important}.footer-links{justify-content:center}}@media(max-width:700px){.container,main{width:min(calc(100% - 32px),980px)}.hero{padding:42px 0 48px}h1{font-size:2.5rem}h2{font-size:1.65rem}.lede{font-size:1.08rem}main{padding-top:48px}section{margin-bottom:54px}.answer,.card,.cta{padding:22px}.grid,.related,.evidence-facts{grid-template-columns:1fr}th,td{padding:12px;font-size:.9rem}}`;
 }
 
 function relatedTitle(route: string): string {
@@ -580,14 +581,14 @@ ${analyticsHead()}
 <body>
   <header>
     <nav class="container" aria-label="Primary navigation">
-      <a class="brand" href="/">Cleanora AI</a>
+      <a class="brand" href="/"><img src="/icon-192.png" alt="" width="32" height="32">Cleanora AI</a>
       <div class="links">
         <a href="/clean-downloads-folder/">Product</a>
         <a href="/category/productivity/">Guides</a>
         <a href="/alternatives/">Comparisons</a>
         <a href="/docs/privacy/">Privacy</a>
       </div>
-      <a href="${downloadHref}">${downloadLabel}</a>
+      <a class="nav-cta" href="${downloadHref}">${downloadLabel}</a>
     </nav>
   </header>
   <div class="container breadcrumbs" aria-label="Breadcrumb">
@@ -678,7 +679,7 @@ ${renderEvidence(page)}
       <a class="button secondary" href="${BUNDLE_URL}" target="_blank" rel="noopener noreferrer">Get the complete bundle</a>
     </section>
   </main>
-  <footer><div class="container">Cleanora AI - Local, metadata-based Downloads organization<div class="footer-links"><a href="/category/downloads/">Downloads guides</a><a href="/category/windows/">Windows guides</a><a href="/category/privacy/">Privacy guides</a><a href="/docs/supported-file-types/">Supported file types</a><a href="https://computoraai.com/">Computora AI desktop software</a><a href="https://foldoraai.com/">Foldora AI file organizer</a><a href="https://galoriaai.com/">Galoria AI photo organizer</a></div></div></footer>
+  <footer><div class="container"><div class="brand"><img src="/icon-192.png" alt="" width="32" height="32">Cleanora AI</div><div class="footer-links"><a href="/category/downloads/">Downloads guides</a><a href="/category/windows/">Windows guides</a><a href="/category/privacy/">Privacy guides</a><a href="/docs/supported-file-types/">Supported file types</a><a href="https://computoraai.com/">Computora AI</a><a href="https://foldoraai.com/">Foldora AI</a><a href="https://galoriaai.com/">Galoria AI</a></div><p class="copyright">Copyright ${new Date().getFullYear()} Cleanora AI</p></div></footer>
 </body>
 </html>`;
 }
@@ -781,7 +782,7 @@ ${analyticsHead()}
   <style>${pageStyles()}</style>
 </head>
 <body>
-  <header><nav class="container"><a class="brand" href="/">Cleanora AI</a><a href="/clean-downloads-folder/">Product</a><a href="/docs/privacy/">Privacy</a></nav></header>
+  <header><nav class="container"><a class="brand" href="/"><img src="/icon-192.png" alt="" width="32" height="32">Cleanora AI</a><div class="links"><a href="/clean-downloads-folder/">Product</a><a href="/docs/privacy/">Privacy</a></div><a class="nav-cta" href="/#download">Get Cleanora</a></nav></header>
   <div class="container breadcrumbs"><a href="/">Home</a> / <span>${escapeHtml(page.title)}</span></div>
   <section class="hero"><div class="container"><div class="eyebrow">${escapeHtml(page.kind)}</div><h1>${escapeHtml(page.title)}</h1><p class="lede">${escapeHtml(page.description)}</p></div></section>
   <main class="container">
@@ -792,7 +793,7 @@ ${analyticsHead()}
     <section><h2>Frequently asked questions</h2>${faqs.map((faq) => `<article class="faq"><h3>${escapeHtml(faq.question)}</h3><p>${escapeHtml(faq.answer)}</p></article>`).join("")}</section>
     <section><h2>Related resources</h2><div class="related"><a href="/clean-downloads-folder/">Downloads Folder Organizer</a><a href="/preview-file-moves-windows/">Preview File Moves</a><a href="/features/offline-processing/">Offline Processing</a><a href="/docs/privacy/">Cleanora Privacy</a></div></section>
   </main>
-  <footer><div class="container">Cleanora AI</div></footer>
+  <footer><div class="container"><div class="brand"><img src="/icon-192.png" alt="" width="32" height="32">Cleanora AI</div><div class="footer-links"><a href="/clean-downloads-folder/">Product</a><a href="/docs/install/">Install</a><a href="/docs/privacy/">Privacy</a><a href="/docs/troubleshooting/">Support</a><a href="https://computoraai.com/">Computora AI</a></div><p class="copyright">Copyright ${new Date().getFullYear()} Cleanora AI</p></div></footer>
 </body>
 </html>`;
 }
@@ -846,7 +847,7 @@ ${analyticsHead()}
   <style>${pageStyles()}</style>
 </head>
 <body>
-  <header><nav class="container"><a class="brand" href="/">Cleanora AI</a><a href="/clean-downloads-folder/">Product</a><a href="/alternatives/">Comparisons</a></nav></header>
+  <header><nav class="container"><a class="brand" href="/"><img src="/icon-192.png" alt="" width="32" height="32">Cleanora AI</a><div class="links"><a href="/clean-downloads-folder/">Product</a><a href="/alternatives/">Comparisons</a></div><a class="nav-cta" href="/#download">Get Cleanora</a></nav></header>
   <div class="container breadcrumbs"><a href="/">Home</a> / <span>Topics</span> / <span>${escapeHtml(category.title)}</span></div>
   <section class="hero"><div class="container"><div class="eyebrow">Topic hub</div><h1>${escapeHtml(category.title)}</h1><p class="lede">${escapeHtml(category.description)} Start with the guide that matches your folder, document type, or workflow.</p></div></section>
   <main class="container">
@@ -858,7 +859,7 @@ ${analyticsHead()}
       .join("")}</div></section>
     <section><h2>How to choose a guide</h2><ol><li>Start with the folder or file type causing the most repeated work.</li><li>Use a persona guide when retention, privacy, or project structure matters.</li><li>Read a comparison page before adopting a new automation tool.</li><li>Test every workflow on a small backed-up folder.</li></ol></section>
   </main>
-  <footer><div class="container">Cleanora AI</div></footer>
+  <footer><div class="container"><div class="brand"><img src="/icon-192.png" alt="" width="32" height="32">Cleanora AI</div><div class="footer-links"><a href="/clean-downloads-folder/">Product</a><a href="/docs/install/">Install</a><a href="/docs/privacy/">Privacy</a><a href="/docs/troubleshooting/">Support</a><a href="https://computoraai.com/">Computora AI</a></div><p class="copyright">Copyright ${new Date().getFullYear()} Cleanora AI</p></div></footer>
 </body>
 </html>`;
 }
