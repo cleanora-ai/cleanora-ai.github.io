@@ -271,9 +271,9 @@ export const seoPages: SeoPage[] = [
     description:
       "Organize a crowded Windows Downloads folder by file type, metadata, or modified date. Preview exact destinations, avoid conflicts, and undo approved moves.",
     eyebrow: "Safe Windows Downloads organization",
-    updatedAt: "2026-09-06",
+    updatedAt: "2026-10-29",
     directAnswer:
-      "Cleanora is a Downloads folder organizer for Windows 10 and 11. It classifies local files using filenames, extensions, modified dates, and filesystem metadata, then shows the exact destination and any conflict before a move. You can exclude files, approve the remaining plan, and use the local audit history to undo eligible changes.",
+      "Cleanora is a $9.99 one-time Downloads folder organizer for Windows 10 and 11. It classifies local files using filenames, extensions, modified dates, and filesystem metadata without reading document contents, then shows every exact destination and conflict before a move. You can exclude files and approve the remaining plan. Download, license activation, and periodic license revalidation require internet access; scanning and planning run locally.",
     problemTitle: "Downloads needs a predictable filing pass, not hidden automation",
     problem: [
       "Browsers, email clients, and collaboration tools all save files into Downloads. Documents, spreadsheets, images, archives, installers, code, audio, and video quickly end up in one folder with no consistent structure.",
@@ -333,7 +333,22 @@ export const seoPages: SeoPage[] = [
       {
         question: "Can Cleanora clean Downloads without internet access?",
         answer:
-          "Scanning and planning run locally. Internet access is used for purchase and license activation; the organizer does not send file contents to a remote classification service.",
+          "Scanning and planning run locally. Internet access is used to download Cleanora, activate a license, and periodically revalidate it. The organizer does not send filenames, paths, metadata, or file contents to a remote classification service.",
+      },
+      {
+        question: "Does Cleanora read documents or understand images?",
+        answer:
+          "No. The current planner uses filenames, extensions, modified dates, and filesystem metadata. It does not read document contents or analyze what an image depicts.",
+      },
+      {
+        question: "What can prevent Cleanora from undoing a move?",
+        answer:
+          "Undo requires a valid license and an authenticated local audit for a successful operation that has not already been undone. Cleanora preflights every path and refuses the entire undo if an original path is occupied. Crash recovery uses best-effort rollback, so keep a current backup before bulk changes.",
+      },
+      {
+        question: "How do I purchase and install Cleanora?",
+        answer:
+          "Cleanora costs $9.99 as a one-time purchase. Complete checkout through the official Cleanora purchase link, then use the download and license instructions supplied with the purchase to install and activate it on Windows 10 or Windows 11.",
       },
     ],
     evidence: {

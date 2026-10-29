@@ -353,6 +353,12 @@ function schemaForPage(page: SeoPage): object {
               description:
                 "Cleanora classifies and moves files with local metadata-based planning and a preview step before changes are applied.",
               featureList: product.claims,
+              offers: {
+                "@type": "Offer",
+                price: product.price.amount.toFixed(2),
+                priceCurrency: "USD",
+                url: product.checkoutUrl,
+              },
               publisher: { "@id": `${SITE_URL}/#organization` },
             },
           ]
@@ -535,7 +541,11 @@ function renderMainPage(page: SeoPage): string {
     : "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1";
   const breadcrumbs = breadcrumbItems(page.route, page.h1);
   const schema = JSON.stringify(schemaForPage(page)).replaceAll("<", "\\u003c");
-  const downloadHref = "/#download";
+  const isPrimaryProductPage = page.route === "clean-downloads-folder";
+  const downloadHref = isPrimaryProductPage ? product.checkoutUrl : "/#download";
+  const downloadLabel = isPrimaryProductPage
+    ? `Buy Cleanora for Windows — ${product.price.display}`
+    : "Download for Windows";
 
   return `<!doctype html>
 <html lang="en">
@@ -577,7 +587,7 @@ ${analyticsHead()}
         <a href="/alternatives/">Comparisons</a>
         <a href="/docs/privacy/">Privacy</a>
       </div>
-      <a href="${downloadHref}">Download for Windows</a>
+      <a href="${downloadHref}">${downloadLabel}</a>
     </nav>
   </header>
   <div class="container breadcrumbs" aria-label="Breadcrumb">
@@ -664,7 +674,7 @@ ${renderEvidence(page)}
     <section class="cta">
       <h2>Organize a folder with Cleanora</h2>
       <p>Classify files locally on Windows, review exact destinations, then apply only the file moves you approve.</p>
-      <a class="button" href="${downloadHref}">Download for Windows</a>
+      <a class="button" href="${downloadHref}">${downloadLabel}</a>
       <a class="button secondary" href="${BUNDLE_URL}" target="_blank" rel="noopener noreferrer">Get the complete bundle</a>
     </section>
   </main>
