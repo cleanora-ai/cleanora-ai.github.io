@@ -14,7 +14,6 @@ import { product, site } from "../src/config/product";
 import { getPricingNavigation } from "../src/lib/pricingNavigation";
 
 const SITE_URL = site.url;
-const BUNDLE_URL = "https://computora.gumroad.com/l/computoraai";
 const OUTPUT_DIR = path.resolve("public");
 const SOCIAL_IMAGE_PATH = "/social-preview.png";
 const SOCIAL_IMAGE_URL = `${SITE_URL}${SOCIAL_IMAGE_PATH}`;
@@ -688,7 +687,6 @@ ${renderEvidence(page)}
       <h2>Organize a folder with Cleanora</h2>
       <p>Classify files locally on Windows, review exact destinations, then apply only the file moves you approve.</p>
       <a class="button" href="${downloadHref}">${downloadLabel}</a>
-      <a class="button secondary" href="${BUNDLE_URL}" target="_blank" rel="noopener noreferrer">Get the complete bundle</a>
     </section>`}
   </main>
   <footer><div class="container"><div class="brand"><img src="/icon-192.png" alt="" width="32" height="32">Cleanora AI</div><div class="footer-links"><a href="/category/downloads/">Downloads guides</a><a href="/category/windows/">Windows guides</a><a href="/category/privacy/">Privacy guides</a><a href="/docs/supported-file-types/">Supported file types</a><a href="https://computoraai.com/">Computora AI</a><a href="https://foldoraai.com/">Foldora AI</a><a href="https://galoriaai.com/">Galoria AI</a></div><p class="copyright">Copyright ${new Date().getFullYear()} Cleanora AI</p></div></footer>
