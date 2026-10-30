@@ -28,6 +28,7 @@ export interface SeoFaq {
 export interface SeoComparison {
   title: string;
   summary: string;
+  headers?: { option: string; bestFor: string; tradeoff: string };
   rows: Array<{
     option: string;
     bestFor: string;
@@ -68,6 +69,7 @@ export interface SeoPage {
   comparison: SeoComparison;
   faqs: SeoFaq[];
   related: string[];
+  sources?: Array<{ label: string; url: string; note: string }>;
   evidence?: SeoEvidence;
   indexable?: boolean;
   canonicalUrl?: string;
@@ -1850,78 +1852,119 @@ export const seoPages: SeoPage[] = [
     title: "Cleanora vs File Juggler for Windows File Organization",
     h1: "Cleanora vs File Juggler",
     description:
-      "Compare Cleanora's metadata-based suggestions with File Juggler's Windows rules for moving, renaming, deleting, and document-based workflows.",
-    eyebrow: "Windows file organizer comparison",
-    updatedAt,
+      "Compare reviewed Windows folder cleanup with recurring file rules: workflow, previews, platforms, privacy, license models, and when File Juggler fits better.",
+    eyebrow: "Comparison published by Cleanora",
+    updatedAt: "2026-10-30",
     directAnswer:
-      "Choose Cleanora when you want low-setup Windows classification from filenames, extensions, dates, and metadata with preview and undo. Choose File Juggler when you want detailed rules that move, rename, delete, and process files based on known conditions, including document content.",
-    problemTitle: "Both are Windows tools, but their setup models differ",
+      "Both products can organize a cluttered Windows folder. Choose Cleanora for a selected cleanup run: classify filenames and metadata, inspect exact destinations, exclude files, and confirm a move plan. Choose File Juggler for recurring if-then rules, document-text conditions, custom renaming, or actions such as copying and deletion. Cleanora is not a replacement for that broader automation.",
+    problemTitle: "Choose a reviewed cleanup run or an ongoing rule workflow",
     problem: [
-      "File Juggler is built around automatic workflows and rules. That makes it suitable when users can state the exact condition and action for each incoming file.",
-      "Cleanora is designed for mixed collections that can be classified from filenames and metadata. It proposes exact category destinations, then asks the user to review the move plan.",
+      "Published by Cleanora, not an independent review. Product details and official sources were checked on October 30, 2026. This is a source-and-documentation comparison, not a hands-on test of File Juggler or a speed or accuracy benchmark.",
+      "Cleanora suits a Downloads or work-folder backlog when filenames, extensions, and modified dates provide enough context. Its Smart mode is deterministic metadata-based classification, not document-reading AI. It does not continuously watch folders, delete files, extract archives, or provide a custom renaming workflow; collision suffixes are shown in the plan.",
+      "File Juggler suits repeatable workflows such as routing invoices by text inside a PDF, renaming them with extracted dates, or handling new downloads as they arrive. You configure the monitored folders, conditions, and actions. Its matching-file list helps you inspect a rule; do not confuse automatic processing with approval of each batch.",
     ],
     steps: [
-      "Identify whether your files follow stable, testable patterns.",
-      "List actions beyond organization, such as deletion or extraction.",
-      "Decide how much rule maintenance you are willing to perform.",
-      "Compare previews and test behavior on edge cases.",
+      "Choose a small backed-up folder and decide whether cleanup is occasional or must keep running for new files.",
+      "If metadata is enough, inspect Cleanora's scan and preview before buying; applying moves and undo require an activated license.",
+      "If you need document-text rules or custom actions, use File Juggler's full-feature trial and inspect the matching files before running a rule.",
+      "Check destinations, collision handling, license terms, and backups before expanding either workflow.",
     ],
     examples: [
       {
-        title: "Known supplier documents",
-        before: "Every invoice contains a stable supplier phrase and date",
-        after: "File Juggler rule extracts fields and routes the invoice",
+        title: "Illustrative: invoice information inside a PDF",
+        before: "A supplier name and invoice date appear in searchable document text",
+        after: "Configure File Juggler content conditions and date variables to route or rename matching invoices",
       },
       {
-        title: "Unstructured archive",
-        before: "Years of documents with inconsistent names",
-        after: "Cleanora proposes category destinations and reasons for review",
+        title: "Illustrative: filenames provide the clues",
+        before: "invoice_1042.pdf and screenshot_work.png in Downloads",
+        after: "Cleanora proposes Documents/Receipts and Invoices and Images/Screenshots beneath the chosen folder, with reasons to review",
       },
     ],
     comparison: {
       title: "Cleanora and File Juggler at a glance",
       summary:
-        "Choose by predictability of input and desired automation control.",
+        "The meaningful difference is a confirmed move plan versus configured ongoing rules, not a claim that File Juggler lacks previews or collision controls.",
+      headers: { option: "Buyer question", bestFor: "Cleanora", tradeoff: "File Juggler" },
       rows: [
         {
-          option: "Cleanora",
-          bestFor: "Low-setup filename and metadata categorization",
-          tradeoff: "Review is required before file moves",
+          option: "Workflow and setup",
+          bestFor: "Select a folder and Smart, File type, or Modified date mode; review and confirm the chosen moves. No background scheduling.",
+          tradeoff: "Configure monitored folders, if-then conditions, and actions; rules react to new or changed files.",
         },
         {
-          option: "File Juggler",
-          bestFor: "Precise recurring Windows file workflows",
-          tradeoff: "Rules need configuration and maintenance",
+          option: "Information used",
+          bestFor: "Filenames, extensions, dates, and filesystem metadata. Does not read document contents.",
+          tradeoff: "Names, dates, metadata, and supported document text. Scanned PDFs need searchable text from an OCR tool first.",
         },
         {
-          option: "Both approaches",
-          bestFor: "Reviewed backlog cleanup followed by ongoing rules",
-          tradeoff: "More tools and workflow complexity",
+          option: "Review and collisions",
+          bestFor: "Exact destinations, reasons, conflicts, and exclusions before confirmation. A new destination collision aborts rather than silently overwriting.",
+          tradeoff: "Rule editing shows matching files. Move/copy/rename actions offer rename-new, skip, or overwrite collision policies; rename-new is the documented default.",
+        },
+        {
+          option: "Actions and destinations",
+          bestFor: "Moves into a reviewed output tree inside the selected source folder; default output is Cleanora Organized. Not arbitrary cross-folder routing.",
+          tradeoff: "Move, copy, rename, delete or recycle, extract archives, and run commands. Destination paths can use variables.",
+        },
+        {
+          option: "Platforms",
+          bestFor: "Windows 10 and Windows 11; no native macOS version.",
+          tradeoff: "Windows desktop software. Check the publisher's current requirements for your Windows version.",
+        },
+        {
+          option: "Pricing model and trial",
+          bestFor: "$9.99 one-time purchase. Scan and preview without a license; apply and undo require activation.",
+          tradeoff: "Paid one-time license, with future upgrades included according to the buying guide. Full-feature 30-day trial. Check the store for the current total and tax.",
+        },
+        {
+          option: "Privacy and online activity",
+          bestFor: "File planning stays local. Download, activation, and periodic license validation need internet; licensing does not send filenames, paths, metadata, or contents.",
+          tradeoff: "Rules work with Windows folders. Its EULA describes consent-based error reports to Sentry; configured upload actions such as Evernote send files to that service.",
+        },
+        {
+          option: "History and recovery",
+          bestFor: "Local audit history and undo for successful, not-yet-undone runs. Undo refuses the whole restore if an original path is occupied. Keep backups.",
+          tradeoff: "An activity log records actions; files sent to the Recycle Bin can be recovered until it is emptied. The publisher recommends backups when testing rules.",
         },
       ],
     },
     faqs: [
       {
-        question: "Can File Juggler read document content?",
+        question: "When is File Juggler the better choice?",
         answer:
-          "Its official site describes workflows that organize and rename documents based on words, dates, and PDF properties.",
+          "Choose File Juggler for ongoing monitored-folder rules, routing based on searchable document text, custom renaming, copying, or deletion. Cleanora does not provide these automation capabilities. File Juggler's rule matching preview and configurable collision policies should still be tested on backed-up files.",
       },
       {
-        question: "Which product is better for exact rules?",
+        question: "Does Cleanora need cloud AI to classify invoices?",
         answer:
-          "File Juggler is the stronger fit when conditions and actions can be defined precisely.",
+          "No. Its current classifier uses local filenames, extensions, dates, and metadata. An invoice keyword in a filename can help it choose a category, but an uninformative name may not. It does not read supplier names or invoice dates from document contents. File Juggler's document-text rules are a better fit for that requirement.",
       },
       {
-        question: "Which product is better for an unstructured backlog?",
+        question: "Do preview and undo replace a backup?",
         answer:
-          "Cleanora is designed for deterministic metadata-based organization when you do not want to author a custom rule set first.",
+          "No. Cleanora's undo needs a valid successful audit, an activated license, and free original paths; it is not guaranteed recovery from hardware failure or external file changes. File Juggler's documentation also recommends backups before testing rules. Local processing does not eliminate filing mistakes.",
       },
     ],
     related: [
-      "best-file-organizer-windows",
-      "alternatives/cloud-organizers",
+      "clean-downloads-folder",
+      "preview-file-moves-windows",
+      "docs/how-it-works",
+      "docs/privacy",
       "alternatives/power-automate",
-      "organize-files-windows",
+    ],
+    sources: [
+      { label: "File Juggler: workflow", url: "https://www.filejuggler.com/documentation/introduction-to-file-juggler/", note: "Monitored folders, conditions, actions, and processing new or changed files." },
+      { label: "File Juggler: rule previews", url: "https://www.filejuggler.com/documentation/creating-rules/", note: "Matching-file list, rule setup, and the publisher's backup advice." },
+      { label: "File Juggler: activity history", url: "https://www.filejuggler.com/news", note: "The version 3 release notes describe the searchable action log; no general undo capability is inferred here." },
+      { label: "File Juggler: actions", url: "https://www.filejuggler.com/documentation/actions/", note: "Actions, collision policies, Recycle Bin recovery, and optional Evernote uploads." },
+      { label: "File Juggler: document conditions", url: "https://www.filejuggler.com/documentation/conditions/", note: "Filename conditions, document text, and the searchable-text requirement for scanned PDFs." },
+      { label: "File Juggler: buying and upgrades", url: "https://www.filejuggler.com/documentation/buying-file-juggler/", note: "Registration-key purchase, license scope, and future upgrades; follow the store link for the current total." },
+      { label: "File Juggler: trial and licensing", url: "https://www.filejuggler.com/faq/trial-and-licensing/", note: "Full-feature 30-day evaluation and license scope." },
+      { label: "File Juggler: application privacy terms", url: "https://www.filejuggler.com/media/le0hyw3l/file-juggler-end-user-license-agreement.pdf", note: "Publisher-linked EULA, section 7: consent-based error reports to Sentry. This is not an independent network audit." },
+      { label: "File Juggler: Windows product", url: "https://www.filejuggler.com/", note: "Publisher's Windows product and download; no unverified Windows-version compatibility claim is made here." },
+      { label: "Cleanora: workflow documentation", url: "https://cleanoraai.com/docs/how-it-works/", note: "Checked against the application's classifier, planner, executor, and preview interface." },
+      { label: "Cleanora: privacy documentation", url: "https://cleanoraai.com/docs/privacy/", note: "Local planning and separate licensing, checked against the application security documentation and licensing service." },
     ],
   },
   {

@@ -650,7 +650,7 @@ ${renderEvidence(page)}
       <p>${escapeHtml(page.comparison.summary)}</p>
       <div style="overflow-x:auto">
         <table>
-          <thead><tr><th>Option</th><th>Best for</th><th>Tradeoff</th></tr></thead>
+          <thead><tr><th>${escapeHtml(page.comparison.headers?.option ?? "Option")}</th><th>${escapeHtml(page.comparison.headers?.bestFor ?? "Best for")}</th><th>${escapeHtml(page.comparison.headers?.tradeoff ?? "Tradeoff")}</th></tr></thead>
           <tbody>
             ${page.comparison.rows
               .map(
@@ -660,7 +660,12 @@ ${renderEvidence(page)}
           </tbody>
         </table>
       </div>
-    </section>
+    </section>${page.sources ? `
+    <section aria-labelledby="comparison-sources">
+      <h2 id="comparison-sources">Sources</h2>
+      <p>Verified ${escapeHtml(page.updatedAt)} against official publisher documents and Cleanora application source. This comparison is published by Cleanora.</p>
+      <ul>${page.sources.map((source) => `<li><a href="${escapeHtml(source.url)}">${escapeHtml(source.label)}</a>: ${escapeHtml(source.note)}</li>`).join("")}</ul>
+    </section>` : ""}
     <section>
       <h2>Frequently asked questions</h2>
       ${page.faqs

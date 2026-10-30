@@ -173,9 +173,9 @@ const SeoContentPage = () => {
               <table className="w-full min-w-[640px] border-collapse bg-card text-left">
                 <thead>
                   <tr className="border-b border-border">
-                    <th className="p-4 text-sm font-semibold text-foreground">Option</th>
-                    <th className="p-4 text-sm font-semibold text-foreground">Best for</th>
-                    <th className="p-4 text-sm font-semibold text-foreground">Tradeoff</th>
+                    <th className="p-4 text-sm font-semibold text-foreground">{page.comparison.headers?.option ?? "Option"}</th>
+                    <th className="p-4 text-sm font-semibold text-foreground">{page.comparison.headers?.bestFor ?? "Best for"}</th>
+                    <th className="p-4 text-sm font-semibold text-foreground">{page.comparison.headers?.tradeoff ?? "Tradeoff"}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -192,6 +192,22 @@ const SeoContentPage = () => {
               </table>
             </div>
           </section>
+
+          {page.sources && (
+            <section aria-labelledby="comparison-sources">
+              <h2 id="comparison-sources" className="text-3xl font-bold">Sources</h2>
+              <p className="mt-4 text-muted-foreground">
+                Verified {page.updatedAt} against official publisher documents and Cleanora application source. This comparison is published by Cleanora.
+              </p>
+              <ul className="mt-6 list-disc space-y-3 pl-5 text-sm leading-relaxed text-muted-foreground">
+                {page.sources.map((source) => (
+                  <li key={source.url}>
+                    <a href={source.url} className="font-medium text-foreground underline underline-offset-4">{source.label}</a>: {source.note}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
 
           <section>
             <h2 className="text-3xl font-bold">Related guides</h2>
