@@ -1,6 +1,8 @@
 import { useLocation } from "react-router-dom";
 
 import Footer from "@/components/Footer";
+import PricingRoute from "@/components/PricingRoute";
+import { getPricingNavigation } from "@/lib/pricingNavigation";
 import Navbar from "@/components/Navbar";
 import SeoHead from "@/components/SeoHead";
 import { seoPagesByRoute } from "@/content/seoPages";
@@ -206,6 +208,7 @@ const SeoContentPage = () => {
             </div>
           </section>
 
+          {getPricingNavigation(page.route) ? <PricingRoute route={page.route} trackClick /> : (
           <section className="rounded-3xl border border-primary/30 bg-card p-8 text-center">
             <h2 className="text-3xl font-bold">Organize a folder with Cleanora</h2>
             <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
@@ -233,6 +236,7 @@ const SeoContentPage = () => {
               </a>
             </div>
           </section>
+          )}
         </div>
       </main>
       <Footer />

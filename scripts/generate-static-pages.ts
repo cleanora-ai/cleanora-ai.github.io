@@ -11,6 +11,7 @@ import {
   type SeoPage,
 } from "../src/content/seoPages";
 import { product, site } from "../src/config/product";
+import { getPricingNavigation } from "../src/lib/pricingNavigation";
 
 const SITE_URL = site.url;
 const BUNDLE_URL = "https://computora.gumroad.com/l/computoraai";
@@ -430,6 +431,12 @@ function analyticsHead(): string {
     </script>`;
 }
 
+function renderPricingRoute(route: string, prefix = ""): string {
+  const navigation = getPricingNavigation(route);
+  if (!navigation) return "";
+  return `${prefix}<section data-pricing-route aria-label="Cleanora pricing" style="border-top:1px solid var(--line);padding-top:24px"><p style="color:var(--muted);margin:0 0 8px">${escapeHtml(navigation.context)}</p><a href="${navigation.href}" style="display:inline-flex;align-items:center;min-height:44px">See pricing</a></section>`;
+}
+
 function pageStyles(): string {
   return `
     :root{color-scheme:dark;--bg:#0d1110;--card:#171d1a;--line:#303b35;--text:#f0f4f1;--muted:#afbbb3;--green:#65d6a0;--teal:#55c8bd;--gradient:linear-gradient(135deg,var(--green),var(--teal))}
@@ -672,12 +679,12 @@ ${renderEvidence(page)}
           .join("")}
       </div>
     </section>
-    <section class="cta">
+    ${renderPricingRoute(page.route) || `<section class="cta">
       <h2>Organize a folder with Cleanora</h2>
       <p>Classify files locally on Windows, review exact destinations, then apply only the file moves you approve.</p>
       <a class="button" href="${downloadHref}">${downloadLabel}</a>
       <a class="button secondary" href="${BUNDLE_URL}" target="_blank" rel="noopener noreferrer">Get the complete bundle</a>
-    </section>
+    </section>`}
   </main>
   <footer><div class="container"><div class="brand"><img src="/icon-192.png" alt="" width="32" height="32">Cleanora AI</div><div class="footer-links"><a href="/category/downloads/">Downloads guides</a><a href="/category/windows/">Windows guides</a><a href="/category/privacy/">Privacy guides</a><a href="/docs/supported-file-types/">Supported file types</a><a href="https://computoraai.com/">Computora AI</a><a href="https://foldoraai.com/">Foldora AI</a><a href="https://galoriaai.com/">Galoria AI</a></div><p class="copyright">Copyright ${new Date().getFullYear()} Cleanora AI</p></div></footer>
 </body>
@@ -791,7 +798,7 @@ ${analyticsHead()}
     <section><h2>Step-by-step</h2><ol>${steps.map((step) => `<li>${escapeHtml(step)}</li>`).join("")}<li>Review the proposed result before applying changes to important files.</li></ol></section>
     <section><h2>Example</h2><div class="card"><p>Start with a small representative folder, confirm that the resulting names and locations match your workflow, and only then process a larger collection.</p></div></section>
     <section><h2>Frequently asked questions</h2>${faqs.map((faq) => `<article class="faq"><h3>${escapeHtml(faq.question)}</h3><p>${escapeHtml(faq.answer)}</p></article>`).join("")}</section>
-    <section><h2>Related resources</h2><div class="related"><a href="/clean-downloads-folder/">Downloads Folder Organizer</a><a href="/preview-file-moves-windows/">Preview File Moves</a><a href="/features/offline-processing/">Offline Processing</a><a href="/docs/privacy/">Cleanora Privacy</a></div></section>
+    <section><h2>Related resources</h2><div class="related"><a href="/clean-downloads-folder/">Downloads Folder Organizer</a><a href="/preview-file-moves-windows/">Preview File Moves</a><a href="/features/offline-processing/">Offline Processing</a><a href="/docs/privacy/">Cleanora Privacy</a></div></section>${renderPricingRoute(page.route, "\n    ")}
   </main>
   <footer><div class="container"><div class="brand"><img src="/icon-192.png" alt="" width="32" height="32">Cleanora AI</div><div class="footer-links"><a href="/clean-downloads-folder/">Product</a><a href="/docs/install/">Install</a><a href="/docs/privacy/">Privacy</a><a href="/docs/troubleshooting/">Support</a><a href="https://computoraai.com/">Computora AI</a></div><p class="copyright">Copyright ${new Date().getFullYear()} Cleanora AI</p></div></footer>
 </body>
@@ -857,7 +864,7 @@ ${analyticsHead()}
         (page) => `<article class="card"><h3><a href="${relatedHref(page.route)}">${escapeHtml(page.h1)}</a></h3><p>${escapeHtml(page.description)}</p></article>`,
       )
       .join("")}</div></section>
-    <section><h2>How to choose a guide</h2><ol><li>Start with the folder or file type causing the most repeated work.</li><li>Use a persona guide when retention, privacy, or project structure matters.</li><li>Read a comparison page before adopting a new automation tool.</li><li>Test every workflow on a small backed-up folder.</li></ol></section>
+    <section><h2>How to choose a guide</h2><ol><li>Start with the folder or file type causing the most repeated work.</li><li>Use a persona guide when retention, privacy, or project structure matters.</li><li>Read a comparison page before adopting a new automation tool.</li><li>Test every workflow on a small backed-up folder.</li></ol></section>${renderPricingRoute(route, "\n    ")}
   </main>
   <footer><div class="container"><div class="brand"><img src="/icon-192.png" alt="" width="32" height="32">Cleanora AI</div><div class="footer-links"><a href="/clean-downloads-folder/">Product</a><a href="/docs/install/">Install</a><a href="/docs/privacy/">Privacy</a><a href="/docs/troubleshooting/">Support</a><a href="https://computoraai.com/">Computora AI</a></div><p class="copyright">Copyright ${new Date().getFullYear()} Cleanora AI</p></div></footer>
 </body>

@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { lazy, Suspense, useEffect } from "react";
 import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import PricingAnchor from "./components/PricingAnchor";
 import { loadAnalytics, trackPageView } from "./lib/analytics";
 const queryClient = new QueryClient();
 
@@ -62,6 +63,7 @@ const App = () => (
             <Route path="/alternatives/dropit" element={<Navigate to="/alternatives/" replace />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <PricingAnchor id="download" />
         </Suspense>
       </BrowserRouter>
     </TooltipProvider>
