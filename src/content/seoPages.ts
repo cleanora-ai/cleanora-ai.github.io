@@ -271,7 +271,7 @@ export const seoPages: SeoPage[] = [
     title: "Downloads Folder Organizer for Windows | Safe Preview",
     h1: "Downloads Folder Organizer for Windows",
     description:
-      "Organize a crowded Windows Downloads folder by file type, metadata, or modified date. Preview exact destinations, avoid conflicts, and undo approved moves.",
+      "Clean up Windows Downloads by file type, modified date, or local metadata. Review exact destinations and conflicts before moving. $9.99 one-time purchase.",
     eyebrow: "Safe Windows Downloads organization",
     updatedAt: "2026-10-29",
     directAnswer:
