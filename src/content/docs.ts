@@ -113,10 +113,13 @@ export const docs = {
     title: "Supported File Types",
     description:
       "See the file categories Cleanora can classify and move into reviewed destination folders.",
-    sections: Object.entries(product.supportedFileTypes).map(([title, types]) => ({
+    sections: [{
+      title: "How these files are classified",
+      content: "Cleanora sorts using filenames, extensions, dates, and local metadata. It does not read document text, understand image contents, or inspect the contents of archives. Review the exact destinations, reasons, and conflicts before approving moves.",
+    }, ...Object.entries(product.supportedFileTypes).map(([title, types]) => ({
       title,
-      content: `${types.join(", ")} files are included in the verified repository copy for classification messaging.`,
-    })),
+      content: `${types.join(", ")} files can be included in a reviewed move plan.`,
+    }))],
   },
 };
 

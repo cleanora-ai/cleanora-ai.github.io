@@ -348,7 +348,7 @@ function schemaForPage(page: SeoPage): object {
               "@id": `${SITE_URL}/#software`,
               name: product.productName,
               url: `${SITE_URL}/`,
-              applicationCategory: "FileManagementApplication",
+              applicationCategory: "UtilitiesApplication",
               operatingSystem: product.platforms.supported.join(", "),
               description:
                 "Cleanora classifies and moves files with local metadata-based planning and a preview step before changes are applied.",
