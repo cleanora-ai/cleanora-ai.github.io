@@ -273,17 +273,20 @@ export const seoPages: SeoPage[] = [
     description:
       "Clean up Windows Downloads by file type, modified date, or local metadata. Review exact destinations and conflicts before moving. $9.99 one-time purchase.",
     eyebrow: "Safe Windows Downloads organization",
-    updatedAt: "2026-10-29",
+    updatedAt: "2026-11-05",
     directAnswer:
-      "Cleanora is a $9.99 one-time Downloads folder organizer for Windows 10 and 11. It classifies local files using filenames, extensions, modified dates, and filesystem metadata without reading document contents, then shows every exact destination and conflict before a move. You can exclude files and approve the remaining plan. Download, license activation, and periodic license revalidation require internet access; scanning and planning run locally.",
+      "To organize loose Downloads files without scanning existing project subfolders, choose Downloads in Cleanora and turn off Include subfolders before generating the preview. This option starts enabled, so check it explicitly. Cleanora then plans moves for regular files directly in the selected folder, leaving nested files out of the scan. Review every destination and exclude items before confirming. Cleanora costs $9.99 once for Windows 10 and 11; it moves approved files into an output folder rather than deleting them.",
     problemTitle: "Downloads needs a predictable filing pass, not hidden automation",
     problem: [
       "Browsers, email clients, and collaboration tools all save files into Downloads. Documents, spreadsheets, images, archives, installers, code, audio, and video quickly end up in one folder with no consistent structure.",
       "A bulk organizer should not make silent decisions. Cleanora keeps the planner metadata-based and explainable, reserves collision-safe destinations, rejects changed or expired plans, and requires explicit confirmation before moving selected files.",
+      "Existing project subfolders and loose downloads need different treatment. With Include subfolders off, Cleanora does not descend into those subfolders. With it on, nested regular files can enter the plan and move out of their existing project layout. This is a scan-scope choice, not automatic recognition of which project folders matter to you.",
+      "Planning uses filenames, extensions, modified dates, and filesystem metadata locally, without reading document text or image contents. Internet is required for download, license activation, and periodic revalidation. Finish active downloads before scanning and keep a separate backup before bulk moves. This guide is published by Computora AI, Cleanora's publisher.",
     ],
     steps: [
       "Choose Downloads or a copied test folder on Windows.",
-      "Select Smart, File type, or Modified date organization.",
+      "Turn off Include subfolders to work only on loose files; confirm the label says Scanning the top level only. Leave it enabled only if you intend to include nested files.",
+      "Select Smart, File type, or Modified date organization, then choose Preview organization.",
       "Inspect every category, reason, destination path, selection, and conflict in the preview.",
       "Exclude anything you want to keep in place, confirm the plan, and use audit history if you need to undo eligible moves.",
     ],
@@ -298,6 +301,11 @@ export const seoPages: SeoPage[] = [
         before: "Files from several months mixed in one folder",
         after: "Modified Date/Year/Year-Month destinations shown before moving",
       },
+      {
+        title: "Illustrative top-level-only plan, File type mode",
+        before: "Downloads/notes.txt alongside Downloads/Projects/client/report.pdf",
+        after: "notes.txt is proposed for Downloads/Cleanora Organized/File Type/TXT/notes.txt. With Include subfolders off, Projects/client/report.pdf is not scanned or proposed for a move. This is a code-grounded example, not a measured library test.",
+      },
     ],
     comparison: {
       title: "Ways to maintain Downloads",
@@ -306,26 +314,45 @@ export const seoPages: SeoPage[] = [
       rows: [
         {
           option: "Cleanora",
-          bestFor: "Mixed files that fit deterministic metadata categories",
-          tradeoff: "Requires reviewing proposed destinations",
+          bestFor: "Reviewed Windows cleanup of loose files, with optional subfolder scanning",
+          tradeoff: "Include subfolders starts enabled; turn it off for top-level-only cleanup. Not a background folder watcher.",
         },
         {
-          option: "Browser destination prompts",
-          bestFor: "Choosing a folder at download time",
-          tradeoff: "Adds friction to every download",
+          option: "Downloads Butler for Chrome",
+          bestFor: "Routing Chrome downloads as they arrive; Rescue also previews older-file cleanup",
+          tradeoff: "Its published Rescue workflow excludes subfolders by default. Choose this approach when browser download routing is the main task.",
         },
         {
-          option: "Scheduled manual cleanup",
-          bestFor: "Small folders",
-          tradeoff: "Easy to postpone and inconsistent at scale",
+          option: "DropIt",
+          bestFor: "Configured file actions and monitored-folder rules",
+          tradeoff: "You define filters, actions, and monitoring. Prefer it when you need repeatable background rules rather than an occasional reviewed pass.",
         },
       ],
     },
+    sources: [
+      { label: "Downloads Butler: Rescue and download routing", url: "https://downloadsbutler.com/", note: "Official product page describes Chrome download routing, previewed Rescue cleanup, and subfolders excluded by default. Reviewed November 5, 2026." },
+      { label: "DropIt: features and folder monitoring", url: "https://www.dropitproject.com/", note: "Official site describes configurable filters, file actions, profiles, and monitored-folder processing. Reviewed November 5, 2026." },
+    ],
     faqs: [
       {
         question: "Does Cleanora delete files from Downloads?",
         answer:
           "Cleanora's organization workflow moves selected files into reviewed destination folders. It is not presented as an automatic deletion tool.",
+      },
+      {
+        question: "Can I organize Downloads without reorganizing existing subfolders?",
+        answer:
+          "Yes. Turn off Include subfolders before Preview organization. The setup then says Scanning the top level only, and nested files are omitted from the plan. The switch starts enabled. Check the selected folder, scan scope, and output destinations each time; approved loose files normally move into Cleanora Organized inside the selected folder.",
+      },
+      {
+        question: "Does top-level-only scanning protect unfinished downloads?",
+        answer:
+          "No. It controls whether nested folders are scanned, not whether a loose file is still being downloaded or edited. Wait for downloads to finish and exclude temporary or active files in the preview. Cleanora rejects detected changes to a reviewed plan, but that safeguard is not a substitute for choosing stable files and keeping a backup.",
+      },
+      {
+        question: "Who should use another approach?",
+        answer:
+          "Choose browser routing or a monitored-folder rules tool if new downloads must be handled continuously. Cleanora is for selected, reviewed cleanup runs. If you need to classify PDFs by their contents, inspect images visually, or extract invoice fields, its filename and metadata planner is not the right tool for that analysis.",
       },
       {
         question: "How often should Downloads be cleaned?",
@@ -385,6 +412,8 @@ export const seoPages: SeoPage[] = [
       "features/downloads-cleanup",
       "preview-file-moves-windows",
       "docs/how-it-works",
+      "docs/supported-file-types",
+      "docs/troubleshooting",
     ],
   },
   {
