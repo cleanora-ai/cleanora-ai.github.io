@@ -25,6 +25,13 @@ export interface SeoFaq {
   answer: string;
 }
 
+export interface ContextualLink {
+  before: string;
+  anchor: string;
+  href: string;
+  after: string;
+}
+
 export interface SeoComparison {
   title: string;
   summary: string;
@@ -64,6 +71,7 @@ export interface SeoPage {
   directAnswer: string;
   problemTitle: string;
   problem: string[];
+  contextualLinks?: ContextualLink[];
   steps: string[];
   examples: SeoExample[];
   comparison: SeoComparison;
@@ -116,6 +124,9 @@ export const seoPages: SeoPage[] = [
     problem: [
       "Downloads, Desktop, and project folders mix documents, images, archives, installers, audio, video, and source files. Manual sorting repeats the same extension and date decisions, but a bulk tool can create a bigger problem if it silently overwrites a destination or executes a plan that changed after review.",
       "Cleanora uses deterministic signals instead of reading document contents. That makes the decision path explainable: each preview shows the source, category, reason, exact destination, selection state, and conflict status. Execution rejects an expired, unknown, changed, or newly conflicting plan.",
+    ],
+    contextualLinks: [
+      { before: "For Downloads cleanup, including whether nested folders are scanned, read the ", anchor: "top-level versus subfolder guide", href: "/clean-downloads-folder/", after: "." },
     ],
     steps: [
       "Choose a Windows folder such as Downloads, Desktop, or a project archive.",
@@ -178,7 +189,6 @@ export const seoPages: SeoPage[] = [
     ],
     related: [
       "best-file-organizer-windows",
-      "clean-downloads-folder",
       "preview-file-moves-windows",
       "features/offline-processing",
     ],
