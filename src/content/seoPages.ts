@@ -1075,86 +1075,149 @@ export const seoPages: SeoPage[] = [
     ],
   },
   {
-    route: "blog/organize-downloads-folder-automatically",
-    kind: "guide",
-    topic: "downloads",
-    title: "Downloads Folder Organization: A Repeatable Workflow",
-    h1: "Organize Your Downloads Folder Automatically",
-    description:
-      "A repeatable Downloads workflow: triage disposable files, route documents by purpose, rename ambiguous files, and schedule lightweight maintenance.",
-    eyebrow: "Downloads maintenance guide",
-    updatedAt,
-    directAnswer:
-      "Use Downloads as a temporary inbox. Automate obvious routing, review context-dependent documents, rename files you will keep, and clear replaceable items on a schedule. The objective is not an empty folder at all times; it is a folder that never becomes too expensive to review.",
-    problemTitle: "Cleanup fails when it is treated as a one-time project",
-    problem: [
-      "A large cleanup can restore order, but the same browser and email habits immediately start filling Downloads again. Maintenance needs a small repeatable workflow.",
-      "Some downloads are safe to route by extension, while others need context. For example, two PDFs may be an invoice and a research paper, so an extension-only rule cannot finish the job.",
-    ],
-    steps: [
-      "Automatically isolate installers, archives, and obvious temporary files.",
-      "Route documents according to purpose rather than extension alone.",
-      "Rename retained files whose original names will not be searchable later.",
-      "Run a short weekly review and a deeper monthly archive check.",
-    ],
-    examples: [
-      {
-        title: "Weekly triage",
-        before: "Seven days of downloads from browsers, email, and chat",
-        after: "Keep, Delete, Installers, and context-specific destination folders",
-      },
-      {
-        title: "Course material",
-        before: "Slides, assignments, readings, and screenshots mixed together",
-        after: "Course/Readings, Assignments, Slides, and References",
-      },
-    ],
-    comparison: {
-      title: "Automation depth",
-      summary:
-        "Combine deterministic rules with contextual review instead of forcing one method.",
-      rows: [
-        {
-          option: "Local metadata suggestions",
-          bestFor: "Mixed files with useful filename and metadata signals",
-          tradeoff: "Requires preview and review",
-        },
-        {
-          option: "Extension rules",
-          bestFor: "Installers, archives, and known media types",
-          tradeoff: "Cannot distinguish document purpose",
-        },
-        {
-          option: "Manual weekly review",
-          bestFor: "Ambiguous and high-value files",
-          tradeoff: "Depends on a consistent habit",
-        },
-      ],
+  "route": "blog/organize-downloads-folder-automatically",
+  "kind": "guide",
+  "topic": "downloads",
+  "title": "Sort Downloads by Type or Date: Windows vs Cleanora",
+  "h1": "Sort Downloads by Type or Date: View or Move?",
+  "description": "Sort Downloads in Windows without moving files, or create type/date folders with a reviewed Cleanora plan. Compare free tools, dates, deletion and limitations.",
+  "eyebrow": "Downloads maintenance guide",
+  "updatedAt": "2026-11-06",
+  "directAnswer": "Use Windows File Explorer sorting when you only want to see Downloads in a different order: it does not move files into folders. Create folders and move selected files manually when the collection is manageable. Use Cleanora for a reviewed physical move plan by extension or UTC modification month. Choose a rule tool such as DropIt for automatic routing of future downloads; Cleanora does not watch the folder.",
+  "problemTitle": "Sorting the view, moving files and deleting files are different jobs",
+  "problem": [
+    "Start with the free option. Open Downloads in File Explorer, choose Details view, and sort by Type or Date modified using the relevant column or Sort control. The displayed order changes; file paths do not. This is sufficient if your goal is finding the newest PDF or installer, not creating a new directory structure.",
+    "For a small set of files, create a destination folder, select only the files you want, and use Cut then Paste to move them. Check the selection before pasting, especially if folders are mixed into the view. Manual filing is also appropriate for sensitive or ambiguous documents whose intended destination cannot be inferred from their extension.",
+    "Cleanora File type mode groups by the exact extension, so PDF and DOCX become separate File Type/PDF and File Type/DOCX folders. Modified date mode uses the file modification timestamp converted to UTC, grouped as Modified Date/YYYY/YYYY-MM. It is not the browser download time, creation date, photo capture date or a date printed inside an invoice. A timestamp close to a month boundary can therefore fall in a different UTC month than its local display.",
+    "Storage Sense addresses disk-space cleanup, not category filing. Microsoft documents deletion settings for old Downloads items; Downloads is not managed unless you configure it. Review those settings separately if your aim is removing files. Cleanora organizes through moves rather than deciding which downloads to delete.",
+    "Cleanora runs on Windows 10 and 11. Its planner uses filenames, extensions and filesystem metadata locally; it does not read document text, recognize photo subjects, extract invoice fields or detect duplicates by comparing contents. Smart mode uses predefined filename and extension rules, not a custom rule editor. It does not monitor folders or schedule background cleanup. Internet access is required for license activation; applying moves and undo require an activated license.",
+    "Review destinations, reasons, conflicts and selected files before confirming. Cleanora preserves names unless a destination collision requires a numbered suffix; it does not silently overwrite. A changed file or new collision after preview can stop execution. Local history supports guarded undo, but changed files or occupied original paths can block recovery. Keep an independent backup: preview and undo are not backup guarantees. Moving files within the same drive does not itself free disk space.",
+    "Publisher disclosure: Computora AI publishes Cleanora. This guide is not an independent review. Official sources and application behavior were checked November 6, 2026; no comparative speed or accuracy test was performed."
+  ],
+  "steps": [
+    "Choose the outcome: a different Explorer display, real type/date folders, or deletion of unwanted files. Do not enable deletion simply to sort the view.",
+    "Try Explorer Details view and Type or Date modified sorting first. For a small collection, create a folder and manually move only the selected files.",
+    "For a Cleanora run, select Downloads, finish active downloads, choose File type or Modified date, and inspect all destinations, selected items and conflicts. Use the linked scope guide if existing subfolders should stay out of the scan.",
+    "Approve only suitable moves and verify output. Run another selected cleanup when needed; use tested monitoring rules if new files must route continuously."
+  ],
+  "examples": [
+    {
+      "title": "Illustrative extension plan, derived from the classifier",
+      "before": "Downloads/report.pdf and Downloads/notes.docx; File type mode selected.",
+      "after": "Proposed paths are Downloads/Cleanora Organized/File Type/PDF/report.pdf and Downloads/Cleanora Organized/File Type/DOCX/notes.docx. This illustrates source behavior, not an observed test or guaranteed conflict-free result."
     },
-    faqs: [
+    {
+      "title": "Illustrative date plan: modification month, not download date",
+      "before": "Downloads/archive.zip has a modification timestamp of 2026-10-15T12:00:00Z; Modified date mode selected.",
+      "after": "The rule proposes Downloads/Cleanora Organized/Modified Date/2026/2026-10/archive.zip. An embedded date or the day you downloaded it does not select that folder."
+    }
+  ],
+  "comparison": {
+    "title": "Choose the smallest tool that performs the right operation",
+    "summary": "Free Windows tools are sufficient for viewing or occasional manual moves. A dedicated organizer is useful only if its actual workflow fits.",
+    "headers": {
+      "option": "Your goal",
+      "bestFor": "Suitable approach",
+      "tradeoff": "What it does not do"
+    },
+    "rows": [
       {
-        question: "Is this different from a one-time Downloads cleanup?",
-        answer:
-          "Yes. A cleanup handles the backlog; this workflow prevents the backlog from returning through regular triage and routing.",
+        "option": "See files by type or last modification",
+        "bestFor": "File Explorer Details view and sorting; no extra purchase.",
+        "tradeoff": "Changes display order, not file locations or document names."
       },
       {
-        question: "Which Downloads files can be routed by simple rules?",
-        answer:
-          "Installers, archives, and some media files are often predictable. General PDFs and office documents usually need more context.",
+        "option": "Make a few folders and place selected files",
+        "bestFor": "Explorer New folder, Cut and Paste; inspect the selection yourself.",
+        "tradeoff": "No Cleanora-style combined destination/reason/conflict plan."
       },
       {
-        question: "Should the Downloads folder always be empty?",
-        answer:
-          "No. It can hold recent items awaiting review. The useful goal is a manageable inbox with no forgotten records.",
+        "option": "Review a batch of physical type/date moves",
+        "bestFor": "Cleanora File type or Modified date mode on Windows 10/11.",
+        "tradeoff": "Paid utility; metadata only, no content understanding or continuous monitoring."
       },
-    ],
-    related: [
-      "clean-downloads-folder",
-      "features/downloads-cleanup",
-      "blog/organize-pdfs-automatically",
-      "organize-files-windows",
-    ],
+      {
+        "option": "Route each new download using custom rules",
+        "bestFor": "A tested DropIt profile with monitoring on Windows.",
+        "tradeoff": "Requires rule and setting review; a batch cleanup does not replace this policy."
+      },
+      {
+        "option": "Free disk space by removing unwanted items",
+        "bestFor": "Manual deletion or carefully configured Windows Storage Sense.",
+        "tradeoff": "Deletion is a different decision from filing; moving within a drive does not free space."
+      }
+    ]
   },
+  "faqs": [
+    {
+      "question": "Does sorting Downloads by Type create folders?",
+      "answer": "No. Explorer sorting changes the displayed order. Creating folders and moving selected files, or approving an organizer move plan, changes physical paths."
+    },
+    {
+      "question": "Does Cleanora sort by download date?",
+      "answer": "Modified date mode groups by UTC modification year and month. It does not read browser download history, creation time, photo EXIF capture time or dates written inside documents."
+    },
+    {
+      "question": "Can I use Windows tools instead of buying an organizer?",
+      "answer": "Yes. Explorer sorting and manual moves are enough for many folders. Use a dedicated organizer only when its reviewed plans or a rule tool's recurring policy solve a requirement you actually have."
+    }
+  ],
+  "related": [
+    "clean-downloads-folder",
+    "preview-file-moves-windows",
+    "alternatives/dropit",
+    "alternatives/manual-organization"
+  ],
+  "contextualLinks": [
+    {
+      "before": "For leaving existing folder contents out of the scan, use the existing ",
+      "anchor": "top-level-only Downloads cleanup instructions",
+      "href": "/clean-downloads-folder/",
+      "after": "."
+    },
+    {
+      "before": "Check ",
+      "anchor": "supported file types and metadata-only limits",
+      "href": "/docs/supported-file-types/",
+      "after": "."
+    },
+    {
+      "before": "Read the ",
+      "anchor": "preview, approval and recovery workflow",
+      "href": "/docs/how-it-works/",
+      "after": "."
+    },
+    {
+      "before": "Review ",
+      "anchor": "local processing and licensing privacy",
+      "href": "/docs/privacy/",
+      "after": "."
+    },
+    {
+      "before": "For ongoing arrival rules rather than approved batches, compare ",
+      "anchor": "Cleanora and DropIt for Downloads",
+      "href": "/alternatives/dropit/",
+      "after": "."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Microsoft: File Explorer navigation, sorting and selection",
+      "url": "https://support.microsoft.com/en-us/accessibility/windows/use-a-screen-reader-to-explore-and-navigate-file-explorer-in-windows",
+      "note": "Details-view sorting changes the view; selection, Cut and Copy are separate operations."
+    },
+    {
+      "label": "Microsoft: Storage Sense",
+      "url": "https://support.microsoft.com/en-us/windows/experience/storage-filemanagement/manage-drive-space-with-storage-sense",
+      "note": "Downloads deletion is configurable and distinct from physical type/date organization."
+    },
+    {
+      "label": "DropIt official guide",
+      "url": "https://www.dropitproject.com/assets/guides/GuideEN.pdf",
+      "note": "A configurable Windows rule/monitoring alternative for recurring file handling."
+    }
+  ]
+},
   {
     route: "blog/clean-desktop-clutter",
     kind: "guide",
@@ -2088,86 +2151,88 @@ export const seoPages: SeoPage[] = [
     ],
   },
   {
-    route: "alternatives/manual-organization",
-    kind: "comparison",
-    topic: "workflows",
-    title: "Cleanora vs Manual File Organization",
-    h1: "Automatic vs Manual File Organization",
-    description:
-      "Compare automatic and manual file organization by setup time, review, control, scale, consistency, and the types of files each method handles best.",
-    eyebrow: "Workflow comparison",
-    updatedAt,
-    directAnswer:
-      "Manual organization is appropriate for a small number of high-value or ambiguous files. Automatic organization is more useful for repeated, high-volume categorization and renaming. The strongest workflow combines automation for obvious work with human review for uncertain or sensitive documents.",
-    problemTitle: "The real tradeoff is repeated effort versus review effort",
-    problem: [
-      "Manual filing gives direct control but repeats the same decisions for every file. Over time, people postpone cleanup or apply inconsistent names and destinations.",
-      "Automation reduces repeated actions but introduces assumptions. A preview and an exception queue preserve control without requiring every file to be handled from scratch.",
-    ],
-    steps: [
-      "Identify repeated decisions that can be automated safely.",
-      "Keep high-value and uncertain files in a human review queue.",
-      "Use consistent folder and filename conventions for both methods.",
-      "Measure whether the system improves retrieval, not only cleanup speed.",
-    ],
-    examples: [
-      {
-        title: "Monthly receipts",
-        before: "Renaming and filing the same document types one by one",
-        after: "Automate proposed names and folders, then review the batch",
-      },
-      {
-        title: "Legal archive",
-        before: "Assuming every similarly named document belongs together",
-        after: "Use manual review for authoritative and ambiguous records",
-      },
-    ],
-    comparison: {
-      title: "Automatic and manual organization at a glance",
-      summary:
-        "Use automation where patterns are stable and review where consequences are high.",
-      rows: [
-        {
-          option: "Cleanora",
-          bestFor: "Repeated local metadata-based categorization",
-          tradeoff: "Destinations need review",
-        },
-        {
-          option: "Manual organization",
-          bestFor: "Small, ambiguous, or high-consequence collections",
-          tradeoff: "Slow and difficult to maintain at scale",
-        },
-        {
-          option: "Hybrid workflow",
-          bestFor: "Most real-world mixed folders",
-          tradeoff: "Requires clear review rules",
-        },
-      ],
+  "route": "alternatives/manual-organization",
+  "kind": "comparison",
+  "topic": "workflows",
+  "title": "Cleanora vs Manual File Organization",
+  "h1": "Automatic vs Manual File Organization",
+  "description": "Compare automatic and manual file organization by setup time, review, control, scale, consistency, and the types of files each method handles best.",
+  "eyebrow": "Workflow comparison",
+  "updatedAt": "2026-09-08",
+  "directAnswer": "Manual organization is appropriate for a small number of high-value or ambiguous files. Automatic organization is more useful for repeated, high-volume categorization and renaming. The strongest workflow combines automation for obvious work with human review for uncertain or sensitive documents.",
+  "problemTitle": "The real tradeoff is repeated effort versus review effort",
+  "problem": [
+    "Manual filing gives direct control but repeats the same decisions for every file. Over time, people postpone cleanup or apply inconsistent names and destinations.",
+    "Automation reduces repeated actions but introduces assumptions. A preview and an exception queue preserve control without requiring every file to be handled from scratch."
+  ],
+  "steps": [
+    "Identify repeated decisions that can be automated safely.",
+    "Keep high-value and uncertain files in a human review queue.",
+    "Use consistent folder and filename conventions for both methods.",
+    "Measure whether the system improves retrieval, not only cleanup speed."
+  ],
+  "examples": [
+    {
+      "title": "Monthly receipts",
+      "before": "Renaming and filing the same document types one by one",
+      "after": "Automate proposed names and folders, then review the batch"
     },
-    faqs: [
+    {
+      "title": "Legal archive",
+      "before": "Assuming every similarly named document belongs together",
+      "after": "Use manual review for authoritative and ambiguous records"
+    }
+  ],
+  "comparison": {
+    "title": "Automatic and manual organization at a glance",
+    "summary": "Use automation where patterns are stable and review where consequences are high.",
+    "rows": [
       {
-        question: "Is automatic file organization safe?",
-        answer:
-          "It is safer when actions are previewed, backups exist, name collisions are detected, and uncertain files are excluded from automatic changes.",
+        "option": "Cleanora",
+        "bestFor": "Repeated local metadata-based categorization",
+        "tradeoff": "Destinations need review"
       },
       {
-        question: "When should files always be reviewed manually?",
-        answer:
-          "Review authoritative legal, financial, regulated, and ambiguous records manually when a wrong move or name would have meaningful consequences.",
+        "option": "Manual organization",
+        "bestFor": "Small, ambiguous, or high-consequence collections",
+        "tradeoff": "Slow and difficult to maintain at scale"
       },
       {
-        question: "How do I know whether automation is saving time?",
-        answer:
-          "Measure time spent filing and time spent finding files, plus correction work caused by wrong names or locations.",
-      },
-    ],
-    related: [
-      "organize-files-automatically",
-      "ai-file-organizer",
-      "alternatives/file-juggler",
-      "blog/digital-file-minimalism",
-    ],
+        "option": "Hybrid workflow",
+        "bestFor": "Most real-world mixed folders",
+        "tradeoff": "Requires clear review rules"
+      }
+    ]
   },
+  "faqs": [
+    {
+      "question": "Is automatic file organization safe?",
+      "answer": "It is safer when actions are previewed, backups exist, name collisions are detected, and uncertain files are excluded from automatic changes."
+    },
+    {
+      "question": "When should files always be reviewed manually?",
+      "answer": "Review authoritative legal, financial, regulated, and ambiguous records manually when a wrong move or name would have meaningful consequences."
+    },
+    {
+      "question": "How do I know whether automation is saving time?",
+      "answer": "Measure time spent filing and time spent finding files, plus correction work caused by wrong names or locations."
+    }
+  ],
+  "related": [
+    "organize-files-automatically",
+    "ai-file-organizer",
+    "alternatives/file-juggler",
+    "blog/digital-file-minimalism"
+  ],
+  "contextualLinks": [
+    {
+      "before": "Before buying an organizer for extension or date groups, compare ",
+      "anchor": "free Windows sorting and reviewed Downloads moves",
+      "href": "/blog/organize-downloads-folder-automatically/",
+      "after": "."
+    }
+  ]
+},
   {
     route: "blog/downloads-folder-organizer-test",
     kind: "guide",
@@ -2271,86 +2336,237 @@ export const seoPages: SeoPage[] = [
     ],
   },
   {
-    route: "alternatives",
-    kind: "comparison",
-    topic: "windows",
-    title: "Best Windows File Organizer Alternatives",
-    h1: "Windows File Organizer Alternatives",
-    description:
-      "Compare Cleanora with rule-based, workflow automation, cloud, and manual file organization approaches for private Windows folder cleanup.",
-    eyebrow: "File organizer comparison hub",
-    updatedAt,
-    directAnswer:
-      "Choose Cleanora when you want a focused Windows utility that classifies files from local metadata, shows exact destinations and conflicts, and applies only approved moves. Choose File Juggler or another rule-based tool when you need detailed recurring conditions. Choose Power Automate when file handling is one step in a broader Microsoft business workflow. Manual organization remains sensible for a small collection of ambiguous or high-consequence records.",
-    problemTitle: "The best alternative depends on the decision you are automating",
-    problem: [
-      "File organizers differ in what they inspect and how much configuration they require. Some classify from filename, extension, and date; others execute rules you write; broader automation platforms connect files with email, cloud storage, spreadsheets, and approvals.",
-      "Privacy and recovery controls matter as much as automation. Before choosing a tool, confirm whether content leaves the computer, whether every destination can be reviewed, how name collisions are handled, and whether an audit or undo path exists.",
-    ],
-    steps: [
-      "List the Windows folders and file types that create repeated cleanup work.",
-      "Decide whether metadata classification, explicit rules, or cross-application workflows fit the task.",
-      "Compare local processing, preview, exclusion, conflict, audit, and undo behavior.",
-      "Test the shortlisted option on a copied representative folder before using important files.",
-    ],
-    examples: [
-      {
-        title: "Mixed Downloads cleanup",
-        before: "PDFs, screenshots, installers, spreadsheets, and archives in one folder",
-        after: "Cleanora proposes explainable metadata-based destinations for review",
-      },
-      {
-        title: "Recurring supplier workflow",
-        before: "Known invoice patterns must trigger fixed actions every month",
-        after: "A rule or workflow platform may provide more precise recurring automation",
-      },
-    ],
-    comparison: {
-      title: "Cleanora alternatives by workflow",
-      summary:
-        "Compare the control model first; products with similar feature lists can require very different amounts of setup and review.",
-      rows: [
-        {
-          option: "Cleanora",
-          bestFor: "Local metadata-based Windows organization with exact previews",
-          tradeoff: "Does not read document contents in the current planner",
-        },
-        {
-          option: "Rule-based organizers",
-          bestFor: "Stable filename, extension, date, or content conditions",
-          tradeoff: "Rules require creation, testing, and maintenance",
-        },
-        {
-          option: "Workflow platforms",
-          bestFor: "Processes connecting files with other services",
-          tradeoff: "More setup and broader permissions than a focused utility",
-        },
-      ],
+  "route": "alternatives",
+  "kind": "comparison",
+  "topic": "windows",
+  "title": "Best Windows File Organizer Alternatives",
+  "h1": "Windows File Organizer Alternatives",
+  "description": "Compare Cleanora with rule-based, workflow automation, cloud, and manual file organization approaches for private Windows folder cleanup.",
+  "eyebrow": "File organizer comparison hub",
+  "updatedAt": "2026-09-08",
+  "directAnswer": "Choose Cleanora when you want a focused Windows utility that classifies files from local metadata, shows exact destinations and conflicts, and applies only approved moves. Choose File Juggler or another rule-based tool when you need detailed recurring conditions. Choose Power Automate when file handling is one step in a broader Microsoft business workflow. Manual organization remains sensible for a small collection of ambiguous or high-consequence records.",
+  "problemTitle": "The best alternative depends on the decision you are automating",
+  "problem": [
+    "File organizers differ in what they inspect and how much configuration they require. Some classify from filename, extension, and date; others execute rules you write; broader automation platforms connect files with email, cloud storage, spreadsheets, and approvals.",
+    "Privacy and recovery controls matter as much as automation. Before choosing a tool, confirm whether content leaves the computer, whether every destination can be reviewed, how name collisions are handled, and whether an audit or undo path exists."
+  ],
+  "steps": [
+    "List the Windows folders and file types that create repeated cleanup work.",
+    "Decide whether metadata classification, explicit rules, or cross-application workflows fit the task.",
+    "Compare local processing, preview, exclusion, conflict, audit, and undo behavior.",
+    "Test the shortlisted option on a copied representative folder before using important files."
+  ],
+  "examples": [
+    {
+      "title": "Mixed Downloads cleanup",
+      "before": "PDFs, screenshots, installers, spreadsheets, and archives in one folder",
+      "after": "Cleanora proposes explainable metadata-based destinations for review"
     },
-    faqs: [
+    {
+      "title": "Recurring supplier workflow",
+      "before": "Known invoice patterns must trigger fixed actions every month",
+      "after": "A rule or workflow platform may provide more precise recurring automation"
+    }
+  ],
+  "comparison": {
+    "title": "Cleanora alternatives by workflow",
+    "summary": "Compare the control model first; products with similar feature lists can require very different amounts of setup and review.",
+    "rows": [
       {
-        question: "What is the best Cleanora alternative?",
-        answer:
-          "File Juggler is worth considering for detailed Windows rules, while Power Automate fits broader Microsoft workflows. The best choice depends on whether you prefer suggested destinations or rules you configure yourself.",
+        "option": "Cleanora",
+        "bestFor": "Local metadata-based Windows organization with exact previews",
+        "tradeoff": "Does not read document contents in the current planner"
       },
       {
-        question: "Is Cleanora a cloud file organizer?",
-        answer:
-          "No. Cleanora's current planner uses filenames, extensions, modified dates, and filesystem metadata locally instead of uploading document contents to an organizer service.",
+        "option": "Rule-based organizers",
+        "bestFor": "Stable filename, extension, date, or content conditions",
+        "tradeoff": "Rules require creation, testing, and maintenance"
       },
       {
-        question: "Should I replace manual organization completely?",
-        answer:
-          "No. Manual review remains appropriate for ambiguous, regulated, legal, or high-value documents. Automation is most useful for repeated and explainable decisions.",
-      },
-    ],
-    related: [
-      "alternatives/file-juggler",
-      "alternatives/power-automate",
-      "alternatives/cloud-organizers",
-      "alternatives/manual-organization",
-    ],
+        "option": "Workflow platforms",
+        "bestFor": "Processes connecting files with other services",
+        "tradeoff": "More setup and broader permissions than a focused utility"
+      }
+    ]
   },
+  "faqs": [
+    {
+      "question": "What is the best Cleanora alternative?",
+      "answer": "File Juggler is worth considering for detailed Windows rules, while Power Automate fits broader Microsoft workflows. The best choice depends on whether you prefer suggested destinations or rules you configure yourself."
+    },
+    {
+      "question": "Is Cleanora a cloud file organizer?",
+      "answer": "No. Cleanora's current planner uses filenames, extensions, modified dates, and filesystem metadata locally instead of uploading document contents to an organizer service."
+    },
+    {
+      "question": "Should I replace manual organization completely?",
+      "answer": "No. Manual review remains appropriate for ambiguous, regulated, legal, or high-value documents. Automation is most useful for repeated and explainable decisions."
+    }
+  ],
+  "related": [
+    "alternatives/file-juggler",
+    "alternatives/power-automate",
+    "alternatives/cloud-organizers",
+    "alternatives/manual-organization"
+  ],
+  "contextualLinks": [
+    {
+      "before": "If your Downloads policy should run repeatedly, compare ",
+      "anchor": "Cleanora with free DropIt rules and monitoring",
+      "href": "/alternatives/dropit/",
+      "after": "."
+    },
+    {
+      "before": "If you only need type or date order, first distinguish ",
+      "anchor": "Windows view sorting from physical Downloads moves",
+      "href": "/blog/organize-downloads-folder-automatically/",
+      "after": "."
+    }
+  ]
+},
+{
+  "route": "alternatives/dropit",
+  "kind": "comparison",
+  "topic": "downloads",
+  "title": "Cleanora vs DropIt for Organizing Downloads",
+  "h1": "Cleanora vs DropIt: Reviewed Cleanup or Reusable Rules?",
+  "description": "Compare Cleanora and free DropIt for Downloads: reviewed destinations versus reusable Windows rules, monitoring and actions. See limits and safety precautions.",
+  "eyebrow": "Downloads organizer comparison",
+  "updatedAt": "2026-11-06",
+  "directAnswer": "DropIt is sufficient when you can define Downloads rules and want a free Windows tool with reusable profiles, file actions and optional monitoring. Choose Cleanora when you want a selected-folder cleanup plan showing exact destinations, reasons and conflicts before approving moves. Both use rules: Cleanora is metadata-based, not document-content AI, and DropIt also supports content filters and pre-processing review.",
+  "problemTitle": "Do you need an ongoing routing policy or a reviewed cleanup run?",
+  "problem": [
+    "A request to automatically move each new download to a chosen folder is a monitoring task. Cleanora does not provide that workflow. DropIt can associate filters with actions and reuse them through profiles; its official guide documents folder monitoring. If a tested profile already expresses your policy, a paid batch organizer is not necessary just to repeat it.",
+    "DropIt supports more than extension sorting: filters include names, dates, properties, content and regular expressions. Actions include move, copy, rename, compress and extract. Cleanora provides its built-in Smart, File type and Modified date plans instead of an arbitrary action chain. It does not unpack archives or replace a configurable rule engine.",
+    "DropIt has a review step too: inspect or skip loaded items before Start. Automatic-start and monitoring settings can change that pause. Test profiles, collision choices and scope on copies. Its official site offers free open-source installer and portable downloads; check compatibility on your Windows system before relying on an older release.",
+    "Cleanora runs on Windows 10 and 11. Its planner uses filenames, extensions and filesystem metadata locally; it does not read document text, recognize photo subjects, extract invoice fields or detect duplicates by comparing contents. Smart mode uses predefined filename and extension rules, not a custom rule editor. It does not monitor folders or schedule background cleanup. Internet access is required for license activation; applying moves and undo require an activated license.",
+    "Review destinations, reasons, conflicts and selected files before confirming. Cleanora preserves names unless a destination collision requires a numbered suffix; it does not silently overwrite. A changed file or new collision after preview can stop execution. Local history supports guarded undo, but changed files or occupied original paths can block recovery. Keep an independent backup: preview and undo are not backup guarantees. Moving files within the same drive does not itself free disk space.",
+    "Publisher disclosure: Computora AI publishes Cleanora. This guide is not an independent review. Official sources and application behavior were checked November 6, 2026; no comparative speed or accuracy test was performed."
+  ],
+  "contextualLinks": [
+    {
+      "before": "For leaving existing folder contents out of the scan, use the existing ",
+      "anchor": "top-level-only Downloads cleanup instructions",
+      "href": "/clean-downloads-folder/",
+      "after": "."
+    },
+    {
+      "before": "Check ",
+      "anchor": "supported file types and metadata-only limits",
+      "href": "/docs/supported-file-types/",
+      "after": "."
+    },
+    {
+      "before": "Read the ",
+      "anchor": "preview, approval and recovery workflow",
+      "href": "/docs/how-it-works/",
+      "after": "."
+    },
+    {
+      "before": "Review ",
+      "anchor": "local processing and licensing privacy",
+      "href": "/docs/privacy/",
+      "after": "."
+    },
+    {
+      "before": "If you only need an easier view of Downloads, compare ",
+      "anchor": "Windows sorting with physical folder organization",
+      "href": "/blog/organize-downloads-folder-automatically/",
+      "after": "."
+    }
+  ],
+  "steps": [
+    "Decide whether files should move automatically as they arrive or only after you approve a selected cleanup run. Finish active downloads and keep a backup.",
+    "For DropIt, test a Move association with a specific extension and chosen destination on disposable copies. Inspect the loaded items before Start and check automatic-start, monitoring and collision settings.",
+    "For Cleanora, select the local folder, choose Smart, File type or Modified date, and inspect the proposed paths. Exclude items you do not want moved.",
+    "Confirm only the reviewed selection and verify the resulting folders. Use DropIt for a recurring policy or broader actions; keep manual filing for ambiguous documents."
+  ],
+  "examples": [
+    {
+      "title": "Illustrative free-rule workflow: ZIP downloads",
+      "before": "You want every ZIP download routed to a known archive folder, with a policy reused on future arrivals.",
+      "after": "A tested DropIt association and monitoring profile can fit. Cleanora can propose an archive destination in a selected run, but does not watch for new arrivals or extract ZIP contents."
+    },
+    {
+      "title": "Illustrative Cleanora File type plan, not a runtime test",
+      "before": "Downloads/report.pdf and Downloads/setup.msi are selected for a cleanup run.",
+      "after": "The built-in File type rule proposes Downloads/Cleanora Organized/File Type/PDF/report.pdf and File Type/MSI/setup.msi under the same output root. Inspect the actual preview; a collision may add a numbered suffix."
+    }
+  ],
+  "comparison": {
+    "title": "Choose the control model you need",
+    "summary": "Neither a free rule profile nor a paid organizer is automatically the right choice for every Downloads folder.",
+    "headers": {
+      "option": "Buyer question",
+      "bestFor": "Cleanora",
+      "tradeoff": "DropIt"
+    },
+    "rows": [
+      {
+        "option": "When does it run?",
+        "bestFor": "Selected-folder scan, plan, selection and explicit confirmation.",
+        "tradeoff": "Drop files onto associations or configure monitoring with a profile."
+      },
+      {
+        "option": "What decides the destination?",
+        "bestFor": "Built-in filename, extension and metadata rules; no content analysis.",
+        "tradeoff": "Custom filters, including content and regular expressions, connected to actions."
+      },
+      {
+        "option": "Which actions are needed?",
+        "bestFor": "Reviewed physical moves; existing names retained except collision suffixes.",
+        "tradeoff": "Broader actions including move, copy, rename, compress and extract."
+      },
+      {
+        "option": "Can I inspect first?",
+        "bestFor": "Exact source/destination, reason and conflict preview; exclude individual items.",
+        "tradeoff": "Inspect or skip loaded files before Start; check automatic-start and monitoring options."
+      },
+      {
+        "option": "Cost and fit",
+        "bestFor": "Paid Windows 10/11 utility; use the individual pricing link below. Online activation required.",
+        "tradeoff": "Free open-source Windows tool; sufficient for a tested policy you can express as rules."
+      }
+    ]
+  },
+  "faqs": [
+    {
+      "question": "Do I need Cleanora just to sort Downloads by extension?",
+      "answer": "No. A free DropIt rule or manual Explorer selection can be sufficient. Cleanora is an option when you want its built-in modes, exact destination/conflict preview and selected-run workflow."
+    },
+    {
+      "question": "Does DropIt lack content filters or review controls?",
+      "answer": "No. Its official documentation lists content filters and loaded-item inspection before Start. Do not choose based on a claim that only Cleanora offers review; compare the complete workflow and settings."
+    },
+    {
+      "question": "Will Cleanora keep organizing new downloads automatically?",
+      "answer": "No. It does not provide background monitoring or scheduling. Use an appropriate rule-based monitor when recurring routing is the requirement."
+    }
+  ],
+  "related": [
+    "alternatives",
+    "blog/organize-downloads-folder-automatically",
+    "clean-downloads-folder",
+    "preview-file-moves-windows"
+  ],
+  "sources": [
+    {
+      "label": "DropIt official capabilities and downloads",
+      "url": "https://www.dropitproject.com/",
+      "note": "Free open-source Windows software, filters and available actions."
+    },
+    {
+      "label": "DropIt official guide",
+      "url": "https://www.dropitproject.com/assets/guides/GuideEN.pdf",
+      "note": "Profiles, monitoring, loaded-item inspection and settings that affect review."
+    },
+    {
+      "label": "DropIt extension-folder tutorial",
+      "url": "https://www.dropitproject.com/dokuwiki/doku.php?id=howto:organize_lots_of_files",
+      "note": "A rule-based approach for filing by extension; test on copies."
+    }
+  ]
+},
 ].map((page) => {
   const canonicalUrl = canonicalOwnerByRoute[page.route];
   return canonicalUrl

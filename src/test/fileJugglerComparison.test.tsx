@@ -57,8 +57,8 @@ describe("Cleanora vs File Juggler buyer comparison", () => {
     expect(document.querySelector('link[rel="canonical"]')?.getAttribute("href")).toBe("https://cleanoraai.com/alternatives/file-juggler/");
     const sitemap = new DOMParser().parseFromString(fs.readFileSync("public/sitemap.xml", "utf8"), "text/xml");
     const urls = [...sitemap.querySelectorAll("loc")].map(item => item.textContent);
-    expect(urls).toHaveLength(21);
-    expect(new Set(urls).size).toBe(21);
+    expect(urls).toHaveLength(22);
+    expect(new Set(urls).size).toBe(22);
     expect(urls.filter(url => url === "https://cleanoraai.com/alternatives/file-juggler/")).toHaveLength(1);
     const hub = new DOMParser().parseFromString(fs.readFileSync("public/alternatives/index.html", "utf8"), "text/html");
     expect(hub.querySelector('a[href="/alternatives/file-juggler/"]')).toBeTruthy();

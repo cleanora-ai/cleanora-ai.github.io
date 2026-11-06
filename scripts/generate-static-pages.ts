@@ -60,7 +60,6 @@ const redirects: Record<string, string> = {
   "blog/rename-files-automatically": "preview-file-moves-windows",
   "blog/ai-file-organizer-for-windows": "clean-downloads-folder",
   "blog/organize-work-files": "blog/desktop-file-management",
-  "alternatives/dropit": "alternatives",
 };
 
 const staleRoutes = ["features/smart-file-renaming"];
