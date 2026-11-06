@@ -416,17 +416,25 @@ function basicSchema(route: string, title: string, description: string): object 
 }
 
 function analyticsHead(): string {
-  if (!site.analyticsMeasurementId) {
-    return "";
-  }
-
-  return `
-    <script async src="https://www.googletagmanager.com/gtag/js?id=${site.analyticsMeasurementId}"></script>
+  const consentScript = '<script src="/privacy-consent.js"></script>';
+  if (!site.analyticsMeasurementId) return consentScript;
+  return `${consentScript}
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', '${site.analyticsMeasurementId}', {'anonymize_ip': true});
+      (function () {
+        function loadAnalytics() {
+          if (!window.SitePrivacy?.optionalServicesAllowed() || window.gtag) return;
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function () { window.dataLayer.push(arguments); };
+          window.gtag('js', new Date());
+          window.gtag('config', '${site.analyticsMeasurementId}', {'anonymize_ip': true});
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=${site.analyticsMeasurementId}';
+          document.head.appendChild(script);
+        }
+        loadAnalytics();
+        document.addEventListener('cleanora:consent-change', loadAnalytics);
+      })();
     </script>`;
 }
 
@@ -689,7 +697,7 @@ ${renderEvidence(page)}
       <a class="button" href="${downloadHref}">${downloadLabel}</a>
     </section>`}
   </main>
-  <footer><div class="container"><div class="brand"><img src="/icon-192.png" alt="" width="32" height="32">Cleanora AI</div><div class="footer-links"><a href="/category/downloads/">Downloads guides</a><a href="/category/windows/">Windows guides</a><a href="/category/privacy/">Privacy guides</a><a href="/docs/supported-file-types/">Supported file types</a><a href="https://computoraai.com/">Computora AI</a><a href="https://foldoraai.com/">Foldora AI</a><a href="https://galoriaai.com/">Galoria AI</a></div><p class="copyright">Copyright ${new Date().getFullYear()} Cleanora AI</p></div></footer>
+  <footer><div class="container"><div class="brand"><img src="/icon-192.png" alt="" width="32" height="32">Cleanora AI</div><div class="footer-links"><a href="/category/downloads/">Downloads guides</a><a href="/category/windows/">Windows guides</a><a href="/category/privacy/">Privacy guides</a><a href="/docs/supported-file-types/">Supported file types</a><a href="https://computoraai.com/">Computora AI</a><a href="https://foldoraai.com/">Foldora AI</a><a href="https://galoriaai.com/">Galoria AI</a></div><p class="copyright">Copyright ${new Date().getFullYear()} Cleanora AI</p></div><button type="button" data-cleanora-privacy-open style="display:block;margin:12px auto 0;background:none;border:0;color:inherit;font:inherit;cursor:pointer;text-decoration:underline">Privacy settings</button></footer>
 </body>
 </html>`;
 }
@@ -803,7 +811,7 @@ ${analyticsHead()}
     <section><h2>Frequently asked questions</h2>${faqs.map((faq) => `<article class="faq"><h3>${escapeHtml(faq.question)}</h3><p>${escapeHtml(faq.answer)}</p></article>`).join("")}</section>
     <section><h2>Related resources</h2><div class="related"><a href="/clean-downloads-folder/">Downloads Folder Organizer</a><a href="/preview-file-moves-windows/">Preview File Moves</a><a href="/features/offline-processing/">Offline Processing</a><a href="/docs/privacy/">Cleanora Privacy</a></div></section>${renderPricingRoute(page.route, "\n    ")}
   </main>
-  <footer><div class="container"><div class="brand"><img src="/icon-192.png" alt="" width="32" height="32">Cleanora AI</div><div class="footer-links"><a href="/clean-downloads-folder/">Product</a><a href="/docs/install/">Install</a><a href="/docs/privacy/">Privacy</a><a href="/docs/troubleshooting/">Support</a><a href="https://computoraai.com/">Computora AI</a></div><p class="copyright">Copyright ${new Date().getFullYear()} Cleanora AI</p></div></footer>
+  <footer><div class="container"><div class="brand"><img src="/icon-192.png" alt="" width="32" height="32">Cleanora AI</div><div class="footer-links"><a href="/clean-downloads-folder/">Product</a><a href="/docs/install/">Install</a><a href="/docs/privacy/">Privacy</a><a href="/docs/troubleshooting/">Support</a><a href="https://computoraai.com/">Computora AI</a></div><p class="copyright">Copyright ${new Date().getFullYear()} Cleanora AI</p></div><button type="button" data-cleanora-privacy-open style="display:block;margin:12px auto 0;background:none;border:0;color:inherit;font:inherit;cursor:pointer;text-decoration:underline">Privacy settings</button></footer>
 </body>
 </html>`;
 }
@@ -869,7 +877,7 @@ ${analyticsHead()}
       .join("")}</div></section>
     <section><h2>How to choose a guide</h2><ol><li>Start with the folder or file type causing the most repeated work.</li><li>Use a persona guide when retention, privacy, or project structure matters.</li><li>Read a comparison page before adopting a new automation tool.</li><li>Test every workflow on a small backed-up folder.</li></ol></section>${renderPricingRoute(route, "\n    ")}
   </main>
-  <footer><div class="container"><div class="brand"><img src="/icon-192.png" alt="" width="32" height="32">Cleanora AI</div><div class="footer-links"><a href="/clean-downloads-folder/">Product</a><a href="/docs/install/">Install</a><a href="/docs/privacy/">Privacy</a><a href="/docs/troubleshooting/">Support</a><a href="https://computoraai.com/">Computora AI</a></div><p class="copyright">Copyright ${new Date().getFullYear()} Cleanora AI</p></div></footer>
+  <footer><div class="container"><div class="brand"><img src="/icon-192.png" alt="" width="32" height="32">Cleanora AI</div><div class="footer-links"><a href="/clean-downloads-folder/">Product</a><a href="/docs/install/">Install</a><a href="/docs/privacy/">Privacy</a><a href="/docs/troubleshooting/">Support</a><a href="https://computoraai.com/">Computora AI</a></div><p class="copyright">Copyright ${new Date().getFullYear()} Cleanora AI</p></div><button type="button" data-cleanora-privacy-open style="display:block;margin:12px auto 0;background:none;border:0;color:inherit;font:inherit;cursor:pointer;text-decoration:underline">Privacy settings</button></footer>
 </body>
 </html>`;
 }

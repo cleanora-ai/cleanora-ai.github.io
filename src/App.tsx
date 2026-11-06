@@ -21,6 +21,12 @@ const RouteAnalytics = () => {
 
   useEffect(() => {
     loadAnalytics();
+    const onConsentChange = () => {
+      loadAnalytics();
+      trackPageView(window.location.pathname + window.location.search);
+    };
+    document.addEventListener("cleanora:consent-change", onConsentChange);
+    return () => document.removeEventListener("cleanora:consent-change", onConsentChange);
   }, []);
 
   useEffect(() => {
