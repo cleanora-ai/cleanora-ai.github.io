@@ -899,9 +899,87 @@ function renderRedirect(from: string, to: string): string {
 </html>`;
 }
 
+function renderFreeToolsPage(): string {
+  const url = absoluteUrl("tools");
+  const title = "Free Downloads Folder Cleanup Checklist and Guides";
+  const description = "Review a crowded Windows Downloads folder before sorting. Track a checklist for documents, images, archives, and installers without scanning or deleting files.";
+  const schema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: title,
+    url,
+    description,
+    inLanguage: "en",
+    dateModified: "2026-11-13",
+    isPartOf: { "@id": `${SITE_URL}/#website` },
+  }).replaceAll("<", "\\u003c");
+  return `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>${title} | Cleanora</title>
+  <meta name="description" content="${description}">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="${url}">
+  <link rel="icon" href="/favicon.ico">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="${title}">
+  <meta property="og:description" content="${description}">
+  <meta property="og:url" content="${url}">
+  <meta property="og:image" content="${SOCIAL_IMAGE_URL}">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">${schema}</script>
+${analyticsHead()}
+  <style>${pageStyles()}
+    .tool-panel{padding:28px;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+    .tool-list{list-style:none;padding:0;margin:18px 0}
+    .tool-list li{margin:0;border-top:1px solid var(--line)}
+    .tool-list label{display:flex;align-items:flex-start;gap:14px;padding:17px 0;cursor:pointer}
+    .tool-list input{flex:none;width:20px;height:20px;margin:4px 0 0;accent-color:var(--primary)}
+    .tool-list strong{display:block;color:var(--text)}
+    .tool-list span{color:var(--muted)}
+    .tool-progress{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .tool-progress button{min-height:44px;padding:9px 16px;border:1px solid var(--primary);border-radius:8px;background:transparent;color:var(--text);font:inherit;cursor:pointer}
+    .tool-progress button:focus-visible{outline:2px solid var(--primary);outline-offset:3px}
+    .tool-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .tool-links a{display:block;min-height:44px;padding:16px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+    @media(max-width:700px){.tool-panel{padding:20px}.tool-links{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header><nav class="container" aria-label="Primary navigation"><a class="brand" href="/"><img src="/icon-192.png" alt="" width="32" height="32">Cleanora AI</a><div class="links"><a href="/clean-downloads-folder/">Product</a><a href="/category/productivity/">Guides</a><a href="/tools/" aria-current="page">Free Tool</a><a href="/docs/privacy/">Privacy</a></div><a class="nav-cta" href="/#download">Download for Windows</a></nav></header>
+  <div class="container breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <span aria-current="page">Free tool</span></div>
+  <section class="hero"><div class="container"><div class="eyebrow">Free Windows folder resource</div><h1>Plan a safer Downloads cleanup</h1><p class="lede">Use this checklist to decide what to keep, archive, or review before moving a mixed batch of files. Progress stays in this browser.</p></div></section>
+  <main class="container">
+    <section class="answer" aria-labelledby="quick-answer"><h2 id="quick-answer">How should I start?</h2><p>Choose one manageable batch in Downloads. Keep documents and images you still use, archive older items you need for reference, and leave uncertain files for review. Organizing means putting files where you can find them; deletion is a separate decision.</p></section>
+    <section class="tool-panel" aria-labelledby="checklist-title">
+      <h2 id="checklist-title">Downloads folder cleanup checklist</h2>
+      <p>Check each step after doing it in File Explorer. This page cannot access your folder, scan files, upload anything, move files, or delete anything.</p>
+      <div class="tool-progress"><output id="tool-progress" aria-live="polite">0 of 6 steps complete</output><button id="tool-reset" type="button">Reset checklist</button></div>
+      <ol class="tool-list" id="tool-list">
+        <li><label><input type="checkbox"><span><strong>Protect important items.</strong> Make a copy of work, financial, and personal files you cannot replace, then check that the copy opens.</span></label></li>
+        <li><label><input type="checkbox"><span><strong>Sort by broad type.</strong> Identify documents, spreadsheets, presentations, images, archives, and installers before choosing destinations.</span></label></li>
+        <li><label><input type="checkbox"><span><strong>Review application dependencies.</strong> A downloaded installer or archive may still be needed for setup, repair, or a project. Confirm its purpose before moving it.</span></label></li>
+        <li><label><input type="checkbox"><span><strong>Compare similar filenames.</strong> Numbered copies can contain different edits. Open and compare them yourself; this checklist does not detect duplicates.</span></label></li>
+        <li><label><input type="checkbox"><span><strong>Decide keep, archive, or review.</strong> Move only files whose destination is clear and leave uncertain items in place.</span></label></li>
+        <li><label><input type="checkbox"><span><strong>Verify after a small batch.</strong> Open a few files from their new folders and make sure no application workflow was disrupted.</span></label></li>
+      </ol>
+      <noscript><p>The steps remain readable without JavaScript. Enable JavaScript to track and reset progress.</p></noscript>
+    </section>
+    <section aria-labelledby="more-guidance"><h2 id="more-guidance">More guidance for Downloads</h2><div class="tool-links"><a href="/preview-file-moves-windows/">Why exact destination previews matter</a><a href="/docs/supported-file-types/">Check Cleanora's supported file types</a></div></section>
+    <section class="cta" aria-labelledby="product-step"><h2 id="product-step">When a reviewed organizer helps</h2><p>Manual sorting is enough for a small folder. For a larger Windows 10 or 11 folder, Cleanora classifies supported files locally from filenames and metadata, then shows exact proposed destinations and conflicts before you apply moves. Scan and preview are available without a license; applying or undoing moves requires activation. Cleanora does not read document contents, detect duplicates, or delete files automatically. Its license costs ${product.price.display} once; download, activation, and periodic license validation require internet access.</p><a class="button" href="/clean-downloads-folder/">See Cleanora's workflow and purchase options</a></section>
+  </main>
+  <footer><div class="container"><div class="brand"><img src="/icon-192.png" alt="" width="32" height="32">Cleanora AI</div><div class="footer-links"><a href="/">Home</a><a href="/docs/how-it-works/">How it works</a><a href="/docs/privacy/">Privacy</a><a href="/docs/install/">Install</a></div><p class="copyright">Copyright ${new Date().getFullYear()} Cleanora AI</p></div><button type="button" data-cleanora-privacy-open style="display:block;margin:12px auto 0;background:none;border:0;color:inherit;font:inherit;cursor:pointer;text-decoration:underline">Privacy settings</button></footer>
+  <script>(function(){var items=Array.from(document.querySelectorAll('#tool-list input[type="checkbox"]'));var output=document.getElementById('tool-progress');var reset=document.getElementById('tool-reset');var key='cleanora-downloads-cleanup-v1';try{var saved=JSON.parse(localStorage.getItem(key)||'[]');items.forEach(function(item,index){item.checked=saved.includes(index)})}catch(error){}function update(){var checked=items.map(function(item,index){return item.checked?index:-1}).filter(function(index){return index>=0});output.textContent=checked.length+' of '+items.length+' steps complete';reset.disabled=checked.length===0;try{localStorage.setItem(key,JSON.stringify(checked))}catch(error){}}items.forEach(function(item){item.addEventListener('change',update)});reset.addEventListener('click',function(){items.forEach(function(item){item.checked=false});update()});update()})();</script>
+</body>
+</html>`;
+}
+
 function writeSitemap(): void {
   const entries = [
     { route: "", updatedAt: HOMEPAGE_UPDATED_AT },
+    { route: "tools", updatedAt: "2026-11-13" },
     ...seoPages
       .filter((page) => page.indexable !== false)
       .map((page) => ({ route: page.route, updatedAt: page.updatedAt })),
@@ -994,6 +1072,7 @@ ${featured}
 }
 
 validatePages();
+writeRoute("tools", renderFreeToolsPage());
 
 for (const route of staleRoutes) {
   fs.rmSync(path.join(OUTPUT_DIR, ...route.split("/")), {
