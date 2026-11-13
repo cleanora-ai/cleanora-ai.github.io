@@ -971,7 +971,7 @@ ${analyticsHead()}
       </ol>
       <noscript><p>The steps remain readable without JavaScript. Enable JavaScript to track and reset progress.</p></noscript>
     </section>
-    <section aria-labelledby="more-guidance"><h2 id="more-guidance">More guidance for Downloads</h2><div class="tool-links"><a href="/preview-file-moves-windows/">Why exact destination previews matter</a><a href="/docs/supported-file-types/">Check Cleanora's supported file types</a></div></section>
+    <section aria-labelledby="more-guidance"><h2 id="more-guidance">More free resources</h2><div class="tool-links"><a href="/tools/metadata-planner/">Preview folders by file type and date</a><a href="/preview-file-moves-windows/">Why exact destination previews matter</a><a href="/docs/supported-file-types/">Check Cleanora's supported file types</a></div></section>
     <section class="cta" aria-labelledby="product-step"><h2 id="product-step">When a reviewed organizer helps</h2><p>Manual sorting is enough for a small folder. For a larger Windows 10 or 11 folder, Cleanora classifies supported files locally from filenames and metadata, then shows exact proposed destinations and conflicts before you apply moves. Scan and preview are available without a license; applying or undoing moves requires activation. Cleanora does not read document contents, detect duplicates, or delete files automatically. Its license costs ${product.price.display} once; download, activation, and periodic license validation require internet access.</p><a class="button" href="/clean-downloads-folder/">See Cleanora's workflow and purchase options</a></section>
   </main>
   <footer><div class="container"><div class="brand"><img src="/icon-192.png" alt="" width="32" height="32">Cleanora AI</div><div class="footer-links"><a href="/">Home</a><a href="/docs/how-it-works/">How it works</a><a href="/docs/privacy/">Privacy</a><a href="/docs/install/">Install</a></div><p class="copyright">Copyright ${new Date().getFullYear()} Cleanora AI</p></div><button type="button" data-cleanora-privacy-open style="display:block;margin:12px auto 0;background:none;border:0;color:inherit;font:inherit;cursor:pointer;text-decoration:underline">Privacy settings</button></footer>
@@ -984,6 +984,7 @@ function writeSitemap(): void {
   const entries = [
     { route: "", updatedAt: HOMEPAGE_UPDATED_AT },
     { route: "tools", updatedAt: "2026-11-13" },
+    { route: "tools/metadata-planner", updatedAt: "2026-11-13" },
     ...seoPages
       .filter((page) => page.indexable !== false)
       .map((page) => ({ route: page.route, updatedAt: page.updatedAt })),

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Free File Type and Date Planner | Cleanora AI</title>
+  <meta name="description" content="Preview folders for Windows files from names, extensions, and dates you supply. No uploads, scanning, moves, or deletion.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://cleanoraai.com/tools/metadata-planner/">
+  <link rel="icon" href="/favicon.ico">
+  <meta property="og:image" content="https://cleanoraai.com/social-preview.png">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Free File Type and Date Planner","url":"https://cleanoraai.com/tools/metadata-planner/","description":"Preview file type and date folders from text supplied in your browser."}</script>
+  <script src="/privacy-consent.js"></script>
+  <style>
+    :root{color-scheme:dark;--bg:#0c1411;--card:#14231c;--line:#2b4938;--text:#effaf2;--muted:#b5c6ba;--primary:#71ddb1}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 Inter,system-ui,sans-serif}a{color:#83e6bb}a:focus-visible,button:focus-visible,textarea:focus-visible{outline:2px solid var(--primary);outline-offset:3px}.wrap{width:min(100% - 32px,900px);margin:auto}header,footer{border-bottom:1px solid var(--line);padding:16px 0}footer{border-top:1px solid var(--line);border-bottom:0;margin-top:64px}nav{display:flex;gap:20px;align-items:center;flex-wrap:wrap}nav a:first-child{font-weight:800;color:var(--text);text-decoration:none}main{padding:38px 0}h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.15}h2{font-size:1.5rem}p,li{max-width:75ch}.muted{color:var(--muted)}.panel{padding:24px;border:1px solid var(--line);border-radius:12px;background:var(--card);margin:28px 0}label{display:block;font-weight:700}textarea{display:block;width:100%;min-height:160px;margin:12px 0;padding:14px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--text);font:inherit}button{min-height:44px;padding:10px 18px;border:0;border-radius:8px;background:var(--primary);color:#10231a;font:inherit;font-weight:800;cursor:pointer}table{width:100%;border-collapse:collapse}th,td{text-align:left;vertical-align:top;padding:12px;border-bottom:1px solid var(--line);overflow-wrap:anywhere}.table-wrap{overflow-x:auto}a.button{display:inline-block;padding:10px 18px;border-radius:8px;background:var(--primary);color:#10231a;font-weight:800;text-decoration:none}@media(max-width:600px){.panel{padding:16px}th,td{padding:8px;font-size:.9rem}}
+  </style>
+</head>
+<body>
+  <header><nav class="wrap" aria-label="Primary navigation"><a href="/">Cleanora AI</a><a href="/tools/">Free checklist</a><a href="/clean-downloads-folder/">Product</a><a href="/docs/privacy/">Privacy</a></nav></header>
+  <main class="wrap">
+    <p><a href="/tools/">Free resources</a> / File type and date planner</p>
+    <h1>Preview folders by file type and supplied date</h1>
+    <p class="muted">Enter one filename per line. Optionally add a vertical bar and a date in YYYY-MM-DD form. This browser tool uses only the text you enter. It cannot scan your Downloads folder, read file contents, upload files, or move anything.</p>
+    <section class="panel" aria-labelledby="planner-heading">
+      <h2 id="planner-heading">Try a small batch</h2>
+      <label for="entries">Filenames and optional modified dates</label>
+      <textarea id="entries" maxlength="20000" placeholder="invoice_1042.pdf | 2026-10-12&#10;photo.jpg | 2025-07-03&#10;installer.msi&#10;archive.zip | 2024-01-15"></textarea>
+      <p class="muted">Example: invoice_1042.pdf is shown as Documents/PDF. A supplied 2026-10-12 date gives a separate 2026/10 date preview. The tool does not verify dates against real files. Enter at most 100 lines.</p>
+      <button type="button" id="preview">Preview folders</button>
+      <p id="summary" role="status" aria-live="polite">No preview yet.</p>
+      <div class="table-wrap"><table><thead><tr><th scope="col">Filename</th><th scope="col">Type preview</th><th scope="col">Date preview</th></tr></thead><tbody id="results"></tbody></table></div>
+    </section>
+    <section><h2>What this preview means</h2><p>Extension groups are a manual planning aid. A PDF with an invoice name may still contain something else; this tool does not inspect the document. Missing or invalid dates stay in Review. Cleanora's real Modified date mode reads file metadata locally after you select a folder, while this page only uses dates you type. Neither this page nor Cleanora deletes files or detects duplicates.</p><p>For a small folder, File Explorer sorting and manual moves may be enough. Cleanora is useful when you need a reviewed physical move plan for a larger Windows 10/11 folder. It classifies supported files from filenames, extensions, dates, and metadata, then shows exact destinations and conflicts before approval. Scan and preview are available without a license; applying or undoing moves requires activation. Download and licensing need internet access, while file planning stays local.</p><p><a class="button" href="/clean-downloads-folder/">See Cleanora's reviewed workflow and $9.99 license</a></p></section>
+  </main>
+  <footer><div class="wrap"><a href="/docs/supported-file-types/">Supported file types</a> · <a href="/docs/how-it-works/">How Cleanora works</a> · <a href="/tools/">Cleanup checklist</a></div></footer>
+  <script>(function(){var input=document.getElementById('entries'),button=document.getElementById('preview'),body=document.getElementById('results'),summary=document.getElementById('summary');var groups={pdf:'Documents/PDF',docx:'Documents/DOCX',txt:'Documents/TXT',md:'Documents/MD',xlsx:'Spreadsheets/XLSX',csv:'Spreadsheets/CSV',ppt:'Presentations/PPT',pptx:'Presentations/PPTX',png:'Images/PNG',jpg:'Images/JPG',jpeg:'Images/JPEG',gif:'Images/GIF',webp:'Images/WEBP',zip:'Archives/ZIP','7z':'Archives/7Z',rar:'Archives/RAR',exe:'Installers/EXE',msi:'Installers/MSI'};button.addEventListener('click',function(){var rows=input.value.split(/\r?\n/).map(function(x){return x.trim()}).filter(Boolean).slice(0,100);body.replaceChildren();rows.forEach(function(line){var parts=line.split('|'),name=(parts[0]||'').trim(),date=(parts[1]||'').trim(),ext=((name.match(/\.([^.]+)$/)||[])[1]||'').toLowerCase();var type=groups[ext]||'Review: unsupported or missing extension';var valid=/^\d{4}-(0[1-9]|1[0-2])-([0-2]\d|3[01])$/.test(date)&&!isNaN(Date.parse(date))&&new Date(date+'T00:00:00Z').toISOString().slice(0,10)===date;var dateFolder=valid?date.slice(0,4)+'/'+date.slice(5,7):'Review: no valid supplied date';var tr=document.createElement('tr');[name,type,dateFolder].forEach(function(value){var td=document.createElement('td');td.textContent=value;tr.appendChild(td)});body.appendChild(tr)});summary.textContent=rows.length?rows.length+' line'+(rows.length===1?'':'s')+' previewed. Check real metadata before moving files.':'Enter at least one filename to preview.'})})();</script>
+</body>
+</html>
