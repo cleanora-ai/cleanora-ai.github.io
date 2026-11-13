@@ -96,15 +96,15 @@ export const docs = {
       },
       {
         title: "Analyze locally",
-        content: `Cleanora uses filenames, extensions, modified dates, and file metadata locally. The current planner does not read file contents.`,
+        content: `Choose Smart, File type, or Modified date mode. Cleanora uses filenames, extensions, modified dates, and file metadata locally; it does not read document contents or recognize what an image depicts. Scanning builds a proposal and does not move files.`,
       },
       {
         title: "Preview the plan",
-        content: `Review proposed categories, exact destinations, and conflicts before files move.`,
+        content: `Review proposed categories, reasons, exact destinations, and conflicts. Exclude files whose destination is wrong or uncertain. The preview is a plan, not an applied result, and scan and preview are available without a license.`,
       },
       {
         title: "Apply approved changes",
-        content: `Apply changes only after the result matches your retrieval workflow.`,
+        content: `An activated license is required to approve physical moves into Cleanora Organized. Inspect the completion result and destination folders afterward. The genuine output image below shows folder categories, not proof that every individual file was correctly classified. Keep a separate backup.`,
       },
     ],
   },
