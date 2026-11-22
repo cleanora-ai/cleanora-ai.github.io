@@ -26,6 +26,10 @@ export const homepageFaqs = [
     a: "Cleanora is positioned for messy folders containing PDFs, documents, spreadsheets, presentations, screenshots, images, archives, installers, invoices, work files, and research files.",
   },
   {
+    q: "How is Cleanora different from Windows sorting or disk cleanup?",
+    a: "File Explorer sorting changes the view, while Storage Sense removes eligible files to free space. Cleanora proposes physical folder moves from filenames, extensions, dates, and metadata, then shows destinations and conflicts before you approve them. It does not delete duplicates or read document contents. Use Foldora if you need supported file-content analysis.",
+  },
+  {
     q: "Does it work without internet?",
     a: "Scanning, classification, preview, and audit history work locally. Internet access is needed to download the app and activate or revalidate a license.",
   },
