@@ -678,13 +678,16 @@ export const seoPages: SeoPage[] = [
     description:
       "Preview exact file destinations, conflicts, categories, and reasons on Windows before confirming a bulk organization plan with Cleanora.",
     eyebrow: "Review-first file organization",
-    updatedAt,
+    updatedAt: "2026-11-23",
     directAnswer:
       "To preview file moves safely, build the organization plan without changing the filesystem, inspect every original path and exact destination, exclude uncertain items, and confirm only the plan identifier you reviewed. Cleanora follows that sequence and aborts if a source or destination changes before execution.",
     problemTitle: "A preview is useful only when execution matches it",
     problem: [
       "A decorative before-and-after screen is not enough for high-confidence bulk organization. Users need the exact source, destination, category, classification reason, selection state, and conflict status before any move begins.",
       "The folder can also change after preview. A new destination file, a changed source, an expired plan, or a reparse point can make the reviewed operation unsafe. Cleanora preflights the complete plan and refuses to silently choose a different destination.",
+    ],
+    contextualLinks: [
+      { before: "See ", anchor: "Cleanora's real interface captures and Downloads folder output", href: "/clean-downloads-folder/#evidence-title", after: ", with Windows requirements and the $9.99 one-time purchase on the same page." },
     ],
     steps: [
       "Select a focused Windows folder and choose a local classification mode.",
