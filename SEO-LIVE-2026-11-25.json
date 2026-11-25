@@ -1,0 +1,600 @@
+{
+  "checkedAt": "2026-11-25T20:40:17.095Z",
+  "origin": "https://cleanoraai.com",
+  "limits": "Public HTTP snapshot only; cannot prove Google indexing, rankings, traffic changes, consent rate, or browser rendering. Analytics IDs are detected only in returned HTML and directly linked JS/CSS.",
+  "sitemap": {
+    "status": 200,
+    "urlCount": 24
+  },
+  "pages": [
+    {
+      "url": "https://cleanoraai.com/",
+      "finalUrl": "https://cleanoraai.com/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "issues": [],
+      "title": "Cleanora AI | Preview-First Windows Folder Cleanup",
+      "canonical": "https://cleanoraai.com/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "description": "Cleanora cleans up Windows folders using filenames and metadata. Review exact destinations and conflicts before moves, with a local audit trail and undo.",
+      "h1Count": 1,
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "SoftwareApplication"
+      ],
+      "visibleWords": 396,
+      "analyticsIds": []
+    },
+    {
+      "url": "https://cleanoraai.com/alternatives/",
+      "finalUrl": "https://cleanoraai.com/alternatives/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "issues": [],
+      "title": "Best Windows File Organizer Alternatives | Cleanora",
+      "canonical": "https://cleanoraai.com/alternatives/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "description": "Compare Cleanora with rule-based, workflow automation, cloud, and manual file organization approaches for private Windows folder cleanup.",
+      "h1Count": 1,
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "visibleWords": 569,
+      "analyticsIds": []
+    },
+    {
+      "url": "https://cleanoraai.com/alternatives/cloud-organizers/",
+      "finalUrl": "https://cleanoraai.com/alternatives/cloud-organizers/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "issues": [],
+      "title": "Cleanora vs Cloud AI File Organizers | Cleanora",
+      "canonical": "https://cleanoraai.com/alternatives/cloud-organizers/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "description": "Compare local Windows file organization with cloud-based AI organizers by privacy, preview control, setup, and offline use.",
+      "h1Count": 1,
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "visibleWords": 511,
+      "analyticsIds": []
+    },
+    {
+      "url": "https://cleanoraai.com/alternatives/dropit/",
+      "finalUrl": "https://cleanoraai.com/alternatives/dropit/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "issues": [],
+      "title": "Cleanora vs DropIt for Organizing Downloads | Cleanora",
+      "canonical": "https://cleanoraai.com/alternatives/dropit/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "description": "Compare Cleanora and free DropIt for Downloads: reviewed destinations versus reusable Windows rules, monitoring and actions. See limits and safety precautions.",
+      "h1Count": 1,
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "visibleWords": 1123,
+      "analyticsIds": []
+    },
+    {
+      "url": "https://cleanoraai.com/alternatives/file-juggler/",
+      "finalUrl": "https://cleanoraai.com/alternatives/file-juggler/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "issues": [],
+      "title": "Cleanora vs File Juggler for Windows File Organization | Cleanora",
+      "canonical": "https://cleanoraai.com/alternatives/file-juggler/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "description": "Compare reviewed Windows folder cleanup with recurring file rules: workflow, previews, platforms, privacy, license models, and when File Juggler fits better.",
+      "h1Count": 1,
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "visibleWords": 1171,
+      "analyticsIds": []
+    },
+    {
+      "url": "https://cleanoraai.com/alternatives/manual-organization/",
+      "finalUrl": "https://cleanoraai.com/alternatives/manual-organization/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "issues": [],
+      "title": "Cleanora vs Manual File Organization | Cleanora",
+      "canonical": "https://cleanoraai.com/alternatives/manual-organization/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "description": "Compare automatic and manual file organization by setup time, review, control, scale, consistency, and the types of files each method handles best.",
+      "h1Count": 1,
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "visibleWords": 460,
+      "analyticsIds": []
+    },
+    {
+      "url": "https://cleanoraai.com/alternatives/power-automate/",
+      "finalUrl": "https://cleanoraai.com/alternatives/power-automate/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "issues": [],
+      "title": "Cleanora vs Power Automate for File Workflows | Cleanora",
+      "canonical": "https://cleanoraai.com/alternatives/power-automate/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "description": "Compare a focused local file organizer with Microsoft&#39;s broader workflow automation platform for desktop, cloud, and business processes.",
+      "h1Count": 1,
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "visibleWords": 442,
+      "analyticsIds": []
+    },
+    {
+      "url": "https://cleanoraai.com/blog/clean-desktop-clutter/",
+      "finalUrl": "https://cleanoraai.com/blog/clean-desktop-clutter/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "issues": [],
+      "title": "How to Clean Desktop Clutter Without Hiding Files | Cleanora",
+      "canonical": "https://cleanoraai.com/blog/clean-desktop-clutter/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "description": "Clear a crowded Windows desktop by separating shortcuts, active work, temporary captures, and files that belong in permanent project folders.",
+      "h1Count": 1,
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "visibleWords": 431,
+      "analyticsIds": []
+    },
+    {
+      "url": "https://cleanoraai.com/blog/digital-file-minimalism/",
+      "finalUrl": "https://cleanoraai.com/blog/digital-file-minimalism/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "issues": [],
+      "title": "Digital File Minimalism: Keep Less, Find More | Cleanora",
+      "canonical": "https://cleanoraai.com/blog/digital-file-minimalism/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "description": "Reduce file clutter without deleting important records. Use retention rules, trusted archives, clear names, and fewer duplicate copies.",
+      "h1Count": 1,
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "visibleWords": 443,
+      "analyticsIds": []
+    },
+    {
+      "url": "https://cleanoraai.com/blog/downloads-folder-organizer-test/",
+      "finalUrl": "https://cleanoraai.com/blog/downloads-folder-organizer-test/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "issues": [],
+      "title": "Downloads Folder Organizer Test | 58 Backend Checks | Cleanora",
+      "canonical": "https://cleanoraai.com/blog/downloads-folder-organizer-test/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "description": "See Cleanora&#39;s Windows test environment, 58 passing backend checks, real planner and output screenshots, representative classifications, and test limitations.",
+      "h1Count": 1,
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "visibleWords": 620,
+      "analyticsIds": []
+    },
+    {
+      "url": "https://cleanoraai.com/blog/organize-downloads-folder-automatically/",
+      "finalUrl": "https://cleanoraai.com/blog/organize-downloads-folder-automatically/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "issues": [],
+      "title": "Sort Downloads by Type or Date: Windows vs Cleanora | Cleanora",
+      "canonical": "https://cleanoraai.com/blog/organize-downloads-folder-automatically/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "description": "Sort Downloads in Windows without moving files, or create type/date folders with a reviewed Cleanora plan. Compare free tools, dates, deletion and limitations.",
+      "h1Count": 1,
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "visibleWords": 1218,
+      "analyticsIds": []
+    },
+    {
+      "url": "https://cleanoraai.com/category/downloads/",
+      "finalUrl": "https://cleanoraai.com/category/downloads/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "issues": [],
+      "title": "Downloads Folder Organization | Cleanora",
+      "canonical": "https://cleanoraai.com/category/downloads/",
+      "robots": "index,follow,max-snippet:-1",
+      "description": "Learn how to organize messy downloads folders automatically. Find focused Cleanora guides and comparisons.",
+      "h1Count": 1,
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "visibleWords": 269,
+      "analyticsIds": []
+    },
+    {
+      "url": "https://cleanoraai.com/category/privacy/",
+      "finalUrl": "https://cleanoraai.com/category/privacy/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "issues": [],
+      "title": "Private Downloads Organization | Cleanora",
+      "canonical": "https://cleanoraai.com/category/privacy/",
+      "robots": "index,follow,max-snippet:-1",
+      "description": "Understand privacy-first organization for files arriving in Downloads. Find focused Cleanora guides and comparisons.",
+      "h1Count": 1,
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "visibleWords": 159,
+      "analyticsIds": []
+    },
+    {
+      "url": "https://cleanoraai.com/category/productivity/",
+      "finalUrl": "https://cleanoraai.com/category/productivity/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "issues": [],
+      "title": "Downloads Cleanup Productivity | Cleanora",
+      "canonical": "https://cleanoraai.com/category/productivity/",
+      "robots": "index,follow,max-snippet:-1",
+      "description": "Reduce repeated Downloads cleanup with reviewable local organization. Find focused Cleanora guides and comparisons.",
+      "h1Count": 1,
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "visibleWords": 234,
+      "analyticsIds": []
+    },
+    {
+      "url": "https://cleanoraai.com/category/windows/",
+      "finalUrl": "https://cleanoraai.com/category/windows/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "issues": [],
+      "title": "Windows Downloads Organization | Cleanora",
+      "canonical": "https://cleanoraai.com/category/windows/",
+      "robots": "index,follow,max-snippet:-1",
+      "description": "Organize a Windows Downloads folder using deterministic local classification. Find focused Cleanora guides and comparisons.",
+      "h1Count": 1,
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "visibleWords": 332,
+      "analyticsIds": []
+    },
+    {
+      "url": "https://cleanoraai.com/clean-downloads-folder/",
+      "finalUrl": "https://cleanoraai.com/clean-downloads-folder/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "issues": [],
+      "title": "Downloads Folder Organizer for Windows | Safe Preview | Cleanora",
+      "canonical": "https://cleanoraai.com/clean-downloads-folder/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "description": "Clean up Windows Downloads by file type, modified date, or local metadata. Review exact destinations and conflicts before moving. $9.99 one-time purchase.",
+      "h1Count": 1,
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "FAQPage",
+        "SoftwareApplication"
+      ],
+      "visibleWords": 1276,
+      "analyticsIds": []
+    },
+    {
+      "url": "https://cleanoraai.com/docs/how-it-works/",
+      "finalUrl": "https://cleanoraai.com/docs/how-it-works/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "issues": [],
+      "title": "How Cleanora Works | Cleanora",
+      "canonical": "https://cleanoraai.com/docs/how-it-works/",
+      "robots": "index,follow,max-snippet:-1",
+      "description": "Understand how Cleanora classifies local file metadata, proposes destination folders, and keeps you in control with a preview step.",
+      "h1Count": 1,
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "visibleWords": 552,
+      "analyticsIds": []
+    },
+    {
+      "url": "https://cleanoraai.com/docs/install/",
+      "finalUrl": "https://cleanoraai.com/docs/install/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "issues": [],
+      "title": "How to Install Cleanora | Cleanora",
+      "canonical": "https://cleanoraai.com/docs/install/",
+      "robots": "index,follow,max-snippet:-1",
+      "description": "Install Cleanora on a supported Windows PC and start with a small folder before organizing larger file collections.",
+      "h1Count": 1,
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "visibleWords": 484,
+      "analyticsIds": []
+    },
+    {
+      "url": "https://cleanoraai.com/docs/privacy/",
+      "finalUrl": "https://cleanoraai.com/docs/privacy/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "issues": [],
+      "title": "Cleanora Privacy | Cleanora",
+      "canonical": "https://cleanoraai.com/docs/privacy/",
+      "robots": "index,follow,max-snippet:-1",
+      "description": "Learn how Cleanora&#39;s local organization workflow reduces cloud exposure for messy folders and sensitive files.",
+      "h1Count": 1,
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "visibleWords": 336,
+      "analyticsIds": []
+    },
+    {
+      "url": "https://cleanoraai.com/docs/supported-file-types/",
+      "finalUrl": "https://cleanoraai.com/docs/supported-file-types/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "issues": [],
+      "title": "Supported File Types | Cleanora",
+      "canonical": "https://cleanoraai.com/docs/supported-file-types/",
+      "robots": "index,follow,max-snippet:-1",
+      "description": "See the file categories Cleanora can classify and move into reviewed destination folders.",
+      "h1Count": 1,
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "visibleWords": 427,
+      "analyticsIds": []
+    },
+    {
+      "url": "https://cleanoraai.com/docs/troubleshooting/",
+      "finalUrl": "https://cleanoraai.com/docs/troubleshooting/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "issues": [],
+      "title": "Cleanora Troubleshooting | Cleanora",
+      "canonical": "https://cleanoraai.com/docs/troubleshooting/",
+      "robots": "index,follow,max-snippet:-1",
+      "description": "Fix common Cleanora installation, folder access, preview, and license activation issues.",
+      "h1Count": 1,
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "visibleWords": 422,
+      "analyticsIds": []
+    },
+    {
+      "url": "https://cleanoraai.com/preview-file-moves-windows/",
+      "finalUrl": "https://cleanoraai.com/preview-file-moves-windows/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "issues": [],
+      "title": "Preview File Moves Safely on Windows | Cleanora",
+      "canonical": "https://cleanoraai.com/preview-file-moves-windows/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "description": "Preview exact file destinations, conflicts, categories, and reasons on Windows before confirming a bulk organization plan with Cleanora.",
+      "h1Count": 1,
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "visibleWords": 500,
+      "analyticsIds": []
+    },
+    {
+      "url": "https://cleanoraai.com/tools/",
+      "finalUrl": "https://cleanoraai.com/tools/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "issues": [],
+      "title": "Free Downloads Folder Cleanup Checklist and Guides | Cleanora",
+      "canonical": "https://cleanoraai.com/tools/",
+      "robots": "index,follow",
+      "description": "Review a crowded Windows Downloads folder before sorting. Track a checklist for documents, images, archives, and installers without scanning or deleting files.",
+      "h1Count": 1,
+      "schemaTypes": [
+        "WebPage"
+      ],
+      "visibleWords": 387,
+      "analyticsIds": []
+    },
+    {
+      "url": "https://cleanoraai.com/tools/metadata-planner/",
+      "finalUrl": "https://cleanoraai.com/tools/metadata-planner/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "issues": [],
+      "title": "Free File Type and Date Planner | Cleanora AI",
+      "canonical": "https://cleanoraai.com/tools/metadata-planner/",
+      "robots": "index,follow",
+      "description": "Preview folders for Windows files from names, extensions, and dates you supply. No uploads, scanning, moves, or deletion.",
+      "h1Count": 1,
+      "schemaTypes": [
+        "WebPage"
+      ],
+      "visibleWords": 277,
+      "analyticsIds": []
+    }
+  ],
+  "assets": [
+    {
+      "url": "https://cleanoraai.com/assets/animation-BRsySF4U.js",
+      "finalUrl": "https://cleanoraai.com/assets/animation-BRsySF4U.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8",
+      "xRobotsTag": null,
+      "analyticsIds": []
+    },
+    {
+      "url": "https://cleanoraai.com/assets/charts-C_KtFLeW.js",
+      "finalUrl": "https://cleanoraai.com/assets/charts-C_KtFLeW.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8",
+      "xRobotsTag": null,
+      "analyticsIds": []
+    },
+    {
+      "url": "https://cleanoraai.com/assets/index-CqVs5iXR.js",
+      "finalUrl": "https://cleanoraai.com/assets/index-CqVs5iXR.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8",
+      "xRobotsTag": null,
+      "analyticsIds": []
+    },
+    {
+      "url": "https://cleanoraai.com/assets/index-DkEH46EN.css",
+      "finalUrl": "https://cleanoraai.com/assets/index-DkEH46EN.css",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8",
+      "xRobotsTag": null,
+      "analyticsIds": []
+    },
+    {
+      "url": "https://cleanoraai.com/assets/react-DK_JcHL8.js",
+      "finalUrl": "https://cleanoraai.com/assets/react-DK_JcHL8.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8",
+      "xRobotsTag": null,
+      "analyticsIds": []
+    },
+    {
+      "url": "https://cleanoraai.com/privacy-consent.js",
+      "finalUrl": "https://cleanoraai.com/privacy-consent.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8",
+      "xRobotsTag": null,
+      "analyticsIds": []
+    }
+  ],
+  "resources": [
+    {
+      "url": "https://cleanoraai.com/robots.txt",
+      "finalUrl": "https://cleanoraai.com/robots.txt",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "xRobotsTag": null,
+      "body": "User-agent: *\nAllow: /\n\nUser-agent: OAI-SearchBot\nAllow: /\n\nUser-agent: GPTBot\nAllow: /\n\nUser-agent: ChatGPT-User\nAllow: /\n\nUser-agent: Google-Extended\nAllow: /\n\nSitemap: https://cleanoraai.com/sitemap.xml\n"
+    },
+    {
+      "url": "https://cleanoraai.com/llms.txt",
+      "finalUrl": "https://cleanoraai.com/llms.txt",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://cleanoraai.com/seo-audit-missing-page-20261125/",
+      "finalUrl": "https://cleanoraai.com/seo-audit-missing-page-20261125/",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null
+    }
+  ]
+}
