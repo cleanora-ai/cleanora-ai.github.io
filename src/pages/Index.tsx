@@ -14,7 +14,7 @@ import ProductNarrativeSection from "@/components/ProductNarrativeSection";
 import AnalyticsSection from "@/components/AnalyticsSection";
 import SeoHead from "@/components/SeoHead";
 import { absoluteUrl } from "@/config/product";
-import { homepageSchema } from "@/lib/seo";
+import { homepageSchema, homepageMetadata } from "@/lib/seo";
 import { trackEvent } from "@/lib/analytics";
 import { useEffect } from "react";
 import { homepageFaqs } from "@/content/homepageFaqs";
@@ -31,8 +31,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <SeoHead
-        title="Cleanora AI | Preview-First Windows Folder Cleanup"
-        description="Cleanora cleans up Windows folders using filenames and metadata. Review exact destinations and conflicts before moves, with a local audit trail and undo."
+        title={homepageMetadata.title}
+        description={homepageMetadata.description}
         canonical={absoluteUrl()}
         schema={homepageSchema(homepageFaqs)}
       />
